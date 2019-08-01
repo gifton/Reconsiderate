@@ -1,4 +1,7 @@
 
+protocol SparqComponent {
+    <#requirements#>
+}
 
 
 enum SparqType {
