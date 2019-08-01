@@ -16,7 +16,7 @@ public class Thought: NSManagedObject {
     @NSManaged public var sparqs: NSSet?
 }
 
-// MARK: calculated variables
+// MARK: computed properties
 extension Thought {
     //return location as CLLocation
     public var location: CLLocation? {
