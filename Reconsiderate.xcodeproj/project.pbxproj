@@ -22,6 +22,9 @@
 		D7B8D6CA22F2B41D00B1552E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B8D6C922F2B41D00B1552E /* String.swift */; };
 		D7B8D6CC22F2B42D00B1552E /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B8D6CB22F2B42D00B1552E /* Optional.swift */; };
 		D7B8D6CE22F2B45800B1552E /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B8D6CD22F2B45800B1552E /* UITableView.swift */; };
+		D7B8D6D022F2BBF100B1552E /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B8D6CF22F2BBF100B1552E /* Managed.swift */; };
+		D7B8D6D222F2BC0500B1552E /* PersistantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B8D6D122F2BC0500B1552E /* PersistantService.swift */; };
+		D7B8D6D422F2BC4C00B1552E /* ManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B8D6D322F2BC4C00B1552E /* ManagedObjectContext.swift */; };
 		D7D3ECC522F269A900831C85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D3ECC422F269A900831C85 /* AppDelegate.swift */; };
 		D7D3ECC722F269A900831C85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D3ECC622F269A900831C85 /* ViewController.swift */; };
 		D7D3ECCC22F269AA00831C85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7D3ECCB22F269AA00831C85 /* Assets.xcassets */; };
@@ -46,6 +49,9 @@
 		D7B8D6C922F2B41D00B1552E /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = String.swift; path = ../../../../../../../Documents/String.swift; sourceTree = "<group>"; };
 		D7B8D6CB22F2B42D00B1552E /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Optional.swift; path = ../../../../../../../Documents/Optional.swift; sourceTree = "<group>"; };
 		D7B8D6CD22F2B45800B1552E /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UITableView.swift; path = ../../../../../../../Documents/UITableView.swift; sourceTree = "<group>"; };
+		D7B8D6CF22F2BBF100B1552E /* Managed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
+		D7B8D6D122F2BC0500B1552E /* PersistantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistantService.swift; sourceTree = "<group>"; };
+		D7B8D6D322F2BC4C00B1552E /* ManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectContext.swift; sourceTree = "<group>"; };
 		D7D3ECC122F269A900831C85 /* Reconsiderate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reconsiderate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D3ECC422F269A900831C85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7D3ECC622F269A900831C85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +107,7 @@
 				D7B8D6C122F2AC1D00B1552E /* Defaults.swift */,
 				D7B8D6BA22F2A8D600B1552E /* Device.swift */,
 				D7B8D6BC22F2AB3100B1552E /* API.swift */,
+				D7B8D6D522F2BC6300B1552E /* CoreData */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -138,6 +145,16 @@
 				D7B8D6CD22F2B45800B1552E /* UITableView.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D7B8D6D522F2BC6300B1552E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D7B8D6CF22F2BBF100B1552E /* Managed.swift */,
+				D7B8D6D122F2BC0500B1552E /* PersistantService.swift */,
+				D7B8D6D322F2BC4C00B1552E /* ManagedObjectContext.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		D7D3ECB822F269A900831C85 = {
@@ -310,8 +327,10 @@
 				D7B8D6B022F2929100B1552E /* HomeController.swift in Sources */,
 				D7D3ECC722F269A900831C85 /* ViewController.swift in Sources */,
 				D7B8D6AE22F2928B00B1552E /* HomeView.swift in Sources */,
+				D7B8D6D422F2BC4C00B1552E /* ManagedObjectContext.swift in Sources */,
 				D7B8D6CA22F2B41D00B1552E /* String.swift in Sources */,
 				D7B8D6C022F2ABC200B1552E /* UIColor.swift in Sources */,
+				D7B8D6D022F2BBF100B1552E /* Managed.swift in Sources */,
 				D7B8D6C622F2B35500B1552E /* UIView.swift in Sources */,
 				D7B8D6B222F292B100B1552E /* RecentView.swift in Sources */,
 				D7D3ECC522F269A900831C85 /* AppDelegate.swift in Sources */,
@@ -321,6 +340,7 @@
 				D7B8D6BD22F2AB3100B1552E /* API.swift in Sources */,
 				D7B8D6CE22F2B45800B1552E /* UITableView.swift in Sources */,
 				D7B8D6B622F2A88800B1552E /* HomeDelegate.swift in Sources */,
+				D7B8D6D222F2BC0500B1552E /* PersistantService.swift in Sources */,
 				D7B8D6C422F2B30900B1552E /* UIStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
