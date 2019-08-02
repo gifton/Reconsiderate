@@ -29,12 +29,25 @@ public class Trait: NSManagedObject {
     
     @NSManaged public var sparqs: NSSet?
     
-    var computedFeelings: [feeling] {
-        return [.calmness]
+    var computedFeelings: [Feeling] {
+        var feelings = [Feeling]()
+        let splitString = self.feelings.split(separator: ",")
+        for s in splitString {
+            guard let f = Feeling(rawValue: String(s)) else { continue }
+            feelings.append(f)
+        }
+        return feelings
     }
 }
 
 // MARK ccomputed properties
 extension Trait {
     
+}
+
+// MARK: Trait conformance to managed protocol
+extension Trait: Managed {
+    static var defaultSortDescriptors: [NSSortDescriptor] {
+        return [NSSortDescriptor(key: #keyPath(date), ascending: false)]
+    }
 }
