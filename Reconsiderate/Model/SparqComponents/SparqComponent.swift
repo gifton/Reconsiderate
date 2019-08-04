@@ -1,8 +1,11 @@
 import CoreData
 import UIKit
 
-enum SparqType {
-    case link, photo, audio, note
+enum SparqType: Int {
+    case link = 0
+    case photo = 1
+    case audio = 2
+    case note = 3
 }
 
 // notes, links, photos, audios all must conform to this

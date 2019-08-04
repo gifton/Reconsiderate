@@ -3,16 +3,15 @@ import CoreData
 import UIKit
 
 @objc(PhotoEntry)
-public class Photo: NSManagedObject {
+public class Note: NSManagedObject {
     
-    
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Photo> {
-        return NSFetchRequest<Photo>(entityName: "PhotoEntry")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Note> {
+        return NSFetchRequest<Note>(entityName: "PhotoEntry")
     }
     
     
     // MARK: Objects
-    @NSManaged public var rawPhoto: Data
+    @NSManaged public var title: String
     @NSManaged public var detail: String?
     
     // MARK: Relationship
@@ -21,25 +20,23 @@ public class Photo: NSManagedObject {
 }
 
 // MARK: Photo SparqComponentConformance
-extension Photo: SparqComponent {
+extension Note: SparqComponent {
     var id: String {
-        return ""
+        return "NoteSparqComponent"
     }
     
     var type: SparqType {
-        return .photo
+        return .note
     }
     
     var calculatedHeight: CGFloat? {
-        guard let img = UIImage(data: rawPhoto) else { return nil }
-        return img.scaled(toWidth: Device.width)?.size.height
+        return nil
     }
-    
     
 }
 
 // MARK: Photo Managed protocol Conformance
-extension Photo: Managed {
+extension Note: Managed {
     static var defaultSortDescriptors: [NSSortDescriptor] {
         return [NSSortDescriptor(key: #keyPath(Trait.date), ascending: false)]
     }
