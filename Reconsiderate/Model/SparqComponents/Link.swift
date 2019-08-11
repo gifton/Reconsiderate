@@ -16,7 +16,6 @@ public class Link: NSManagedObject {
     
     // MARK: Relationship
     @NSManaged public var sparq: Sparq
-    @NSManaged public var trait: Trait
     
     var id: String  = ""
 }
@@ -37,6 +36,6 @@ extension Link: SparqComponent {
 // MARK: Photo Managed protocol Conformance
 extension Link : Managed {
     static var defaultSortDescriptors: [NSSortDescriptor] {
-        return [NSSortDescriptor(key: #keyPath(Trait.date), ascending: false)]
+        return [NSSortDescriptor(key: #keyPath(Sparq.trait.date), ascending: false)]
     }
 }

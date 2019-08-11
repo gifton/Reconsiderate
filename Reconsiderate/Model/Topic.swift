@@ -21,5 +21,12 @@ public class Topic: NSManagedObject {
     @NSManaged public var date: Date
     
     
-    
+}
+
+
+// MARK: managed conformance
+extension Topic: Managed {
+    static var defaultSortDescriptors: [NSSortDescriptor] {
+        return [NSSortDescriptor(key: #keyPath(date), ascending: false)]
+    }
 }

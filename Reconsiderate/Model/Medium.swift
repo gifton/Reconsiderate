@@ -11,7 +11,7 @@ enum Medium: Int {
         case 0: return Medium.link
         case 1: return Medium.photo
         case 2: return Medium.audio
-        case 3: return Medium.note
+        default: return Medium.note
         }
     }
 }

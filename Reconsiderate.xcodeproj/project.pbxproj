@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		55FC5FB2543F97AF1722EE87 /* Pods_Reconsiderate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9266A398A6F0C39D539612EE /* Pods_Reconsiderate.framework */; };
 		D709905023002A9D0067FBC0 /* TraitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D709904F23002A9D0067FBC0 /* TraitsViewModel.swift */; };
+		D709905223002E280067FBC0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D709905123002E280067FBC0 /* HomeViewModel.swift */; };
 		D749130122F32172000FE52F /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = D749130022F32172000FE52F /* Note.swift */; };
 		D749130322F32177000FE52F /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = D749130222F32177000FE52F /* Link.swift */; };
 		D749130522F3217F000FE52F /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D749130422F3217F000FE52F /* Photo.swift */; };
@@ -49,6 +50,7 @@
 		757004AD15CFCF2A80A77FAA /* Pods-Reconsiderate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reconsiderate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reconsiderate/Pods-Reconsiderate.release.xcconfig"; sourceTree = "<group>"; };
 		9266A398A6F0C39D539612EE /* Pods_Reconsiderate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reconsiderate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D709904F23002A9D0067FBC0 /* TraitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitsViewModel.swift; sourceTree = "<group>"; };
+		D709905123002E280067FBC0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D749130022F32172000FE52F /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		D749130222F32177000FE52F /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		D749130422F3217F000FE52F /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				D709904F23002A9D0067FBC0 /* TraitsViewModel.swift */,
+				D709905123002E280067FBC0 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7B8D6C822F2B36600B1552E /* CGRect.swift in Sources */,
+				D709905223002E280067FBC0 /* HomeViewModel.swift in Sources */,
 				D7B8D6B022F2929100B1552E /* HomeController.swift in Sources */,
 				D749130122F32172000FE52F /* Note.swift in Sources */,
 				D749130322F32177000FE52F /* Link.swift in Sources */,
