@@ -1,6 +1,12 @@
 
 import Foundation
 import CoreData
+import CoreLocation
+
+// HomeView conrolls three aspects:
+// navigation
+// creating a new thought
+// viewing recent thoughts / sparqs
 
 class HomeViewModel: NSObject {
     init(withContext context: NSManagedObjectContext) {
@@ -44,5 +50,8 @@ extension HomeViewModel {
         }
     }
     
-    
+    public func createThought(withTitle title: String, andIcon icon: String) {
+        _ = Thought.insert(in: context, title: title, icon: icon, location: CLLocation())
+        do { try context.save() } catch { print(error)}
+    }
 }

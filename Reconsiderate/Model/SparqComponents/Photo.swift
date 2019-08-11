@@ -39,6 +39,6 @@ extension Photo: SparqComponent {
 // MARK: Photo Managed protocol Conformance
 extension Photo: Managed {
     static var defaultSortDescriptors: [NSSortDescriptor] {
-        return [NSSortDescriptor(key: #keyPath(Sparq.trait.date), ascending: false)]
+        return [NSSortDescriptor(key: #keyPath(sparq.trait.date), ascending: false)]
     }
 }
