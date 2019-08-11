@@ -16,10 +16,11 @@ public class Audio: NSManagedObject {
     // MARK: Relationship
     @NSManaged public var sparq: Sparq
     @NSManaged public var trait: Trait
+    
+    var id: String  = ""
 }
 
 extension Audio: SparqComponent {
-    var id: String { return "" }
     var type: SparqType { return .audio }
     var calculatedHeight: CGFloat? { return nil }
 }

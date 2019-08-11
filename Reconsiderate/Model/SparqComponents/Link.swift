@@ -17,13 +17,12 @@ public class Link: NSManagedObject {
     // MARK: Relationship
     @NSManaged public var sparq: Sparq
     @NSManaged public var trait: Trait
+    
+    var id: String  = ""
 }
 
 // MARK: Photo SparqComponentConformance
 extension Link: SparqComponent {
-    var id: String {
-        return "LinkSparqComponent"
-    }
     
     var type: SparqType {
         return .link

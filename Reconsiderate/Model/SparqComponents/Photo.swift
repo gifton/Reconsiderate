@@ -18,13 +18,12 @@ public class Photo: NSManagedObject {
     // MARK: Relationship
     @NSManaged public var sparq: Sparq
     @NSManaged public var trait: Trait
+    
+    var id: String  = ""
 }
 
 // MARK: Photo SparqComponentConformance
 extension Photo: SparqComponent {
-    var id: String {
-        return "PhotoSparqComponent"
-    }
     
     var type: SparqType {
         return .photo

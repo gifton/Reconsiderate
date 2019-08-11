@@ -17,13 +17,11 @@ public class Note: NSManagedObject {
     // MARK: Relationship
     @NSManaged public var sparq: Sparq
     @NSManaged public var trait: Trait
+    var id: String  = ""
 }
 
 // MARK: Photo SparqComponentConformance
 extension Note: SparqComponent {
-    var id: String {
-        return "NoteSparqComponent"
-    }
     
     var type: SparqType {
         return .note
