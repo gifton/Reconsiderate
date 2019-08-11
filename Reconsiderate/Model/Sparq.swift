@@ -8,6 +8,7 @@ public class Sparq: NSManagedObject {
 
     @NSManaged public var trait: Trait
     @NSManaged public var thought: Thought
+    
     @NSManaged public var note: Note?
     @NSManaged public var link: Link?
     @NSManaged public var audio: Audio?
