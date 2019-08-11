@@ -2,7 +2,7 @@
 import CoreData
 import UIKit
 
-@objc(PhotoEntry)
+@objc(Note)
 public class Note: NSManagedObject {
     
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Note> {

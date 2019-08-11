@@ -2,7 +2,7 @@
 import CoreData
 import UIKit
 
-@objc(PhotoEntry)
+@objc(Link)
 public class Link: NSManagedObject {
     
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Link> {

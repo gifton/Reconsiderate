@@ -2,7 +2,7 @@
 import CoreData
 import UIKit
 
-@objc(PhotoEntry)
+@objc(Photo)
 public class Photo: NSManagedObject {
     
     

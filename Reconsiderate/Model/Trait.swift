@@ -17,7 +17,7 @@ import CoreData
 import UIKit
 import CoreLocation
 
-@objc(Thought)
+@objc(Trait)
 public class Trait: NSManagedObject {
     // MARK: Core Data properties
     @NSManaged public var feelings: String
