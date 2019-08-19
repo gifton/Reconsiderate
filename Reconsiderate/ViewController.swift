@@ -17,8 +17,12 @@ class ViewController: UIViewController {
         tv.dataSource = self
         tv.frame = view.frame
         tv.rowHeight = view.frame.height
+        tv.allowsSelection = false
+        
+        tv.register(cellWithClass: HomeContainerCell.self)
+        
         view.addSubview(tv)
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .white
     }
     
     let tv: UITableView = {
@@ -38,11 +42,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withClass: HomeContainerCell.self, for: indexPath)
+            cell.cv.delegate = self
+            return cell
+        }
         let cell = UITableViewCell()
         cell.backgroundColor = .white
-        if indexPath.row == 1 {
-            cell.backgroundColor = .black
-        }
         
         return cell
     }
@@ -58,3 +64,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+extension ViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        if indexPath.row == 0 {
+//            tv.isScrollEnabled = true
+//        } else {
+//            tv.isScrollEnabled = false
+//        }
+    }
+}
