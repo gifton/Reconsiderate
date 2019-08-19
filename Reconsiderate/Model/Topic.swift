@@ -14,11 +14,12 @@ import CoreData
 import CoreLocation
 import UIKit
 
-@objc(Sparq)
+@objc(Topic)
 public class Topic: NSManagedObject {
     
     @NSManaged public var title: String
     @NSManaged public var date: Date
+    @NSManaged public var lastUpdate: Date
     
     
 }

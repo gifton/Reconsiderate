@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         return tv
     }()
     
-    let ggenerator = UINotificationFeedbackGenerator()
+    let generator = UINotificationFeedbackGenerator()
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -41,7 +41,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = UITableViewCell()
         cell.backgroundColor = .white
         if indexPath.row == 1 {
-            cell.backgroundColor = .lightGray
+            cell.backgroundColor = .black
         }
         
         return cell
@@ -52,7 +52,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        ggenerator.notificationOccurred(.warning)
+        generator.notificationOccurred(.warning)
         
     }
     
