@@ -45,6 +45,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withClass: HomeContainerCell.self, for: indexPath)
             cell.cv.delegate = self
+            cell.router = self
             return cell
         }
         let cell = UITableViewCell()
@@ -75,4 +76,22 @@ extension ViewController: UICollectionViewDelegate {
             tv.isScrollEnabled = true
         }
     }
+}
+
+extension ViewController: HomeControllerDelegate {
+    func moveScrollView(to view: HomeCells) {
+        if view == .recent {
+            tv.scrollToRow(at: IndexPath(item: 1, section: 0), at: .middle, animated: true)
+        }
+    }
+}
+
+
+protocol HomeControllerDelegate {
+    func moveScrollView(to view: HomeCells)
+    
+}
+
+enum HomeCells {
+    case newThought, home, recent
 }

@@ -14,11 +14,11 @@ class HomeCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    var logo = UIImageView(image: #imageLiteral(resourceName: "logo"))
-    var welcomeLabel = UILabel(String.greeting() + ",")
-    var welcomeUser = UILabel("Gifton")
-    var toThought = UIButton()
-    var toRecent = UIButton()
+    private var logo = UIImageView(image: #imageLiteral(resourceName: "logo"))
+    private var welcomeLabel = UILabel(String.greeting() + ",")
+    private var welcomeUser = UILabel("Gifton")
+    public var toThought = UIButton()
+    public var toRecent = UIButton()
     
     private func setButtons() {
         var yPosition: CGFloat = welcomeUser.bottom + 100

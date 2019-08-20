@@ -20,6 +20,8 @@ class HomeContainerCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    public var router: HomeControllerDelegate?
     public var cv: UICollectionView!
     
     func setCollection() {
@@ -58,11 +60,19 @@ extension HomeContainerCell: UICollectionViewDataSource {
         if indexPath.row == 0 {
             cell = collectionView.dequeueReusableCell(withClass: NewThoughtCell.self, for: indexPath)
         } else {
-            cell = collectionView.dequeueReusableCell(withClass: HomeCell.self, for: indexPath)
+            let new = collectionView.dequeueReusableCell(withClass: HomeCell.self, for: indexPath)
+            new.toThought.addTapGestureRecognizer(action: moveToThought)
+            new.toRecent.addTapGestureRecognizer {
+                self.router?.moveScrollView(to: .recent)
+            }
+            cell = new
         }
         
         return cell
     }
     
+    private func moveToThought() {
+        cv.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
+    }
     
 }
