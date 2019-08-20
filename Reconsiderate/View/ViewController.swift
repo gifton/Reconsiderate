@@ -58,18 +58,21 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        generator.notificationOccurred(.warning)
+        generator.notificationOccurred(.success)
         
     }
     
 }
 
 extension ViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        if indexPath.row == 0 {
-//            tv.isScrollEnabled = true
-//        } else {
-//            tv.isScrollEnabled = false
-//        }
+    
+    // table view should only scroll on home view
+    // thought view has nothing below it... yet
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            tv.isScrollEnabled = false
+        } else {
+            tv.isScrollEnabled = true
+        }
     }
 }
