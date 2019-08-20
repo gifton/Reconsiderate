@@ -32,6 +32,8 @@ class HomeContainerCell: UITableViewCell {
         cv = UICollectionView(frame: Device.frame, collectionViewLayout: layout)
         cv.allowsSelection = false
         cv.isPagingEnabled = true
+        cv.backgroundColor = Device.colors.primaryPink
+        cv.setBackView(withContent: "Just keep thinking 🐠")
         
         cv.dataSource = self
         

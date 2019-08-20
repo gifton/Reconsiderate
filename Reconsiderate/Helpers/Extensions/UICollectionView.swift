@@ -35,4 +35,21 @@ public extension UICollectionView {
         }
         return cell
     }
+    
+    // set side bar with a little bit of text on a collection view
+    func setBackView(withContent payload: String) {
+        let view = UIView(frame: CGRect(x: Device.width - 100, y: 0, width: 100, height: Device.height))
+        //        view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        view.layer.borderColor = UIColor.black.cgColor
+        view.layer.borderWidth = 5
+        
+        let lbl = UILabel()
+        lbl.text = payload
+        lbl.sizeToFit()
+        view.addSubview(lbl)
+        lbl.center = view.center
+        
+        lbl.rotate(degrees: 90)
+        backgroundView = view
+    }
 }
