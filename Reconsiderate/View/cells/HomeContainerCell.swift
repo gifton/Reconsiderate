@@ -60,17 +60,17 @@ extension HomeContainerCell: UICollectionViewDataSource {
         if indexPath.row == 0 {
             cell = collectionView.dequeueReusableCell(withClass: NewThoughtCell.self, for: indexPath)
         } else {
-            let new = collectionView.dequeueReusableCell(withClass: HomeCell.self, for: indexPath)
-            new.toThought.addTapGestureRecognizer(action: moveToThought)
-            new.toRecent.addTapGestureRecognizer {
-                self.router?.moveScrollView(to: .recent)
-            }
-            cell = new
+            // set cell's paramaters, and gestures
+            let cCell = collectionView.dequeueReusableCell(withClass: HomeCell.self, for: indexPath)
+            cCell.toThought.addTapGestureRecognizer(action: moveToThought)
+            cCell.toRecent.addTapGestureRecognizer { self.router?.moveScrollView(to: .recent) }
+            cell = cCell
         }
         
         return cell
     }
     
+    // move collection view to new thought
     private func moveToThought() {
         cv.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
     }

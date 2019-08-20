@@ -1,25 +1,26 @@
 
 import UIKit
 
+// home cell holds all major navigation components for application
 class HomeCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
-        setHead()
-        setButtons()
-        addNavButtons()
+        setHead(); setButtons(); addNavButtons()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Private vars
     private var logo = UIImageView(image: #imageLiteral(resourceName: "logo"))
     private var welcomeLabel = UILabel(String.greeting() + ",")
     private var welcomeUser = UILabel("Gifton")
     public var toThought = UIButton()
     public var toRecent = UIButton()
     
+    // add main navigation buttons
     private func setButtons() {
         var yPosition: CGFloat = welcomeUser.bottom + 100
         for type in HomeTabType.exhastive {
@@ -31,6 +32,7 @@ class HomeCell: UICollectionViewCell {
         }
     }
     
+    // header with greeting setter
     private func setHead() {
         logo.frame = CGRect(x: 45, y: 70, width: 60, height: 60)
         logo.contentMode = .scaleToFill
@@ -51,7 +53,6 @@ class HomeCell: UICollectionViewCell {
     }
     
     // buttons at bottom direct user to recent view (cell 1) and new thought (cell 0 - 0)
-    
     func addNavButtons() {
         // set titles and images
         // recent
@@ -79,10 +80,9 @@ class HomeCell: UICollectionViewCell {
         toThought.frame.origin.y = Device.height - 225
         toThought.titleEdgeInsets = UIEdgeInsets(top: 0, left: 7, bottom: 0, right: 0)
         
-        
+        // add to view
         addSubview(toRecent)
         addSubview(toThought)
         
-
     }
 }
