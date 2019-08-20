@@ -167,6 +167,7 @@
 		D7B8D6AC22F2928300B1552E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D7D3ECC622F269A900831C85 /* ViewController.swift */,
 				D7099082230AF6E40067FBC0 /* Reusable */,
 				D7099079230AEB2D0067FBC0 /* cells */,
 				D7B8D6B322F295FA00B1552E /* home */,
@@ -223,6 +224,10 @@
 		D7B8D6B922F2A8A500B1552E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D7D3ECCD22F269AA00831C85 /* LaunchScreen.storyboard */,
+				D7D3ECCB22F269AA00831C85 /* Assets.xcassets */,
+				D7D3ECD022F269AA00831C85 /* Info.plist */,
+				D7D3ECC422F269A900831C85 /* AppDelegate.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -281,11 +286,6 @@
 				D7B8D6B722F2A89300B1552E /* ViewModel */,
 				D7B8D6B422F2A3FB00B1552E /* Helpers */,
 				D7B8D6AC22F2928300B1552E /* View */,
-				D7D3ECC422F269A900831C85 /* AppDelegate.swift */,
-				D7D3ECC622F269A900831C85 /* ViewController.swift */,
-				D7D3ECCB22F269AA00831C85 /* Assets.xcassets */,
-				D7D3ECCD22F269AA00831C85 /* LaunchScreen.storyboard */,
-				D7D3ECD022F269AA00831C85 /* Info.plist */,
 			);
 			path = Reconsiderate;
 			sourceTree = "<group>";
@@ -602,7 +602,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JL7TCK5Y58;
-				INFOPLIST_FILE = Reconsiderate/Info.plist;
+				INFOPLIST_FILE = Reconsiderate/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -622,7 +622,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JL7TCK5Y58;
-				INFOPLIST_FILE = Reconsiderate/Info.plist;
+				INFOPLIST_FILE = Reconsiderate/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
