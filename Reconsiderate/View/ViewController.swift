@@ -19,7 +19,9 @@ class ViewController: UIViewController {
         tv.rowHeight = view.frame.height
         tv.allowsSelection = false
         tv.showsVerticalScrollIndicator = false
+        
         tv.register(cellWithClass: HomeContainerCell.self)
+        tv.register(cellWithClass: RecentCell.self)
         
         view.addSubview(tv)
         view.backgroundColor = .white
@@ -48,9 +50,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             cell.router = self
             return cell
         }
-        let cell = UITableViewCell()
-        cell.backgroundColor = .white
-        
+        let cell = tableView.dequeueReusableCell(withClass: RecentCell.self, for: indexPath)
         return cell
     }
     
