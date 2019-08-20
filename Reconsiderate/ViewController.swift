@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         tv.frame = view.frame
         tv.rowHeight = view.frame.height
         tv.allowsSelection = false
-        
+        tv.showsVerticalScrollIndicator = false
         tv.register(cellWithClass: HomeContainerCell.self)
         
         view.addSubview(tv)
