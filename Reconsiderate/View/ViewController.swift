@@ -51,6 +51,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         let cell = tableView.dequeueReusableCell(withClass: RecentCell.self, for: indexPath)
+        cell.toHome.addTapGestureRecognizer(action: scrollToHome)
         return cell
     }
     
@@ -78,6 +79,10 @@ extension ViewController: HomeControllerDelegate {
         if view == .recent {
             tv.scrollToRow(at: IndexPath(item: 1, section: 0), at: .middle, animated: true)
         }
+    }
+    
+    func scrollToHome() {
+        tv.scrollToRow(at: IndexPath(item: 0, section: 0), at: .middle, animated: true)
     }
 }
 

@@ -16,6 +16,9 @@ class RecentCell: UITableViewCell {
     // MARK: Private vars
     private var thoughtTitle = UILabel("Thoughts")
     
+    // MARK: public vars
+    public var toHome = UIButton()
+    
     private func setThoughts() {
         var yPos = CGFloat(250)
         for _ in 0...4 {
@@ -29,11 +32,24 @@ class RecentCell: UITableViewCell {
     }
     
     private func setHeader() {
-        thoughtTitle.font = Device.font.mainTitle()
+        
+        // thought header
+        thoughtTitle.font = Device.font.mainTitle(ofSize: .xXLarge)
         thoughtTitle.sizeToFit()
         thoughtTitle.left = 50
-        thoughtTitle.bottom = 225
+        thoughtTitle.bottom = 240
+        
+        // to home
+        toHome.setImage(#imageLiteral(resourceName: "arrow-up"), for: .normal)
+        toHome.setTitle("Home", for: .normal)
+        toHome.titleEdgeInsets = UIEdgeInsets(top: 0, left: 7, bottom: 0, right: 0)
+        toHome.setTitleColor(Device.colors.secondaryGray, for: .normal)
+        toHome.sizeToFit()
+        toHome.width += 7
+        toHome.top = 55
+        toHome.centerX = Device.width / 2
         
         addSubview(thoughtTitle)
+        addSubview(toHome)
     }
 }
