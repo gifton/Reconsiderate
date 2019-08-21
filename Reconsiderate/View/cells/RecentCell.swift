@@ -1,6 +1,7 @@
 
 import UIKit
 
+// recent cell holds users recent thoughts and sparqs
 class RecentCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -12,12 +13,12 @@ class RecentCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private var logo = UIImageView(image: #imageLiteral(resourceName: "logo"))
+    // MARK: Private vars
+    private var thoughtTitle = UILabel("Thoughts")
     
     private func setThoughts() {
         var yPos = CGFloat(250)
         for _ in 0...4 {
-            print("adding view")
             let view = MicroThoughtView()
             view.frame.origin = CGPoint(x: 50, y: yPos)
             
@@ -28,9 +29,11 @@ class RecentCell: UITableViewCell {
     }
     
     private func setHeader() {
-        logo.frame = CGRect(x: 45, y: 70, width: 60, height: 60)
-        logo.contentMode = .scaleToFill
+        thoughtTitle.font = Device.font.mainTitle()
+        thoughtTitle.sizeToFit()
+        thoughtTitle.left = 50
+        thoughtTitle.bottom = 225
         
-        addSubview(logo)
+        addSubview(thoughtTitle)
     }
 }

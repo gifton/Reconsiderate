@@ -58,7 +58,7 @@ struct Device {
     struct colors {
         // background
         static let primaryPink   = UIColor(hex: "F4EAEA")
-        static let darkGray      = UIColor(hex: "161616")
+        static let darkGray      = UIColor(hex: "9A9A9A")
         static let lightGray     = UIColor(hex: "EDEEEF")
         
         // text
@@ -69,6 +69,7 @@ struct Device {
         static let primaryBlue   = UIColor(hex: "6271FC")
         static let secondaryBlue = UIColor(hex: "7E86B7")
         static let secondaryGray = UIColor(hex: "A3A0A0")
+        static let mutedBlue     = UIColor(hex: "43545C")
         
     }
 }

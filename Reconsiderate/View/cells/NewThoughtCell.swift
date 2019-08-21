@@ -4,7 +4,7 @@ import UIKit
 class NewThoughtCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .random
+        backgroundColor = Device.colors.mutedBlue
     }
     
     required init?(coder aDecoder: NSCoder) {
