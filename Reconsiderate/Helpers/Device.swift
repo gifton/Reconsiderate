@@ -18,6 +18,8 @@ struct Device {
         case large = 85.0
     }
     
+    static let previewTile: CGSize = CGSize(width: 225, height: 225)
+    
     enum padding: CGFloat {
         case small   = 5.0
         case medium  = 10.0

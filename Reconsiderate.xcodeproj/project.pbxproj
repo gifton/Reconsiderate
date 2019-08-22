@@ -30,6 +30,9 @@
 		D749130E22F347BA000FE52F /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D749130D22F347BA000FE52F /* Topic.swift */; };
 		D749131022F347D5000FE52F /* Feeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = D749130F22F347D5000FE52F /* Feeling.swift */; };
 		D749131222F4171F000FE52F /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D749131122F4171F000FE52F /* UIImage.swift */; };
+		D776D448230F208000836B6C /* SparqCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776D447230F208000836B6C /* SparqCollection.swift */; };
+		D776D44A230F221B00836B6C /* PhotoPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776D449230F221B00836B6C /* PhotoPreviewCell.swift */; };
+		D776D44C230F2B1000836B6C /* NotePreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776D44B230F2B1000836B6C /* NotePreviewCell.swift */; };
 		D7B8D6AE22F2928B00B1552E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B8D6AD22F2928B00B1552E /* HomeView.swift */; };
 		D7B8D6B022F2929100B1552E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B8D6AF22F2929100B1552E /* HomeController.swift */; };
 		D7B8D6B222F292B100B1552E /* RecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B8D6B122F292B100B1552E /* RecentView.swift */; };
@@ -81,6 +84,9 @@
 		D749130D22F347BA000FE52F /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		D749130F22F347D5000FE52F /* Feeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feeling.swift; sourceTree = "<group>"; };
 		D749131122F4171F000FE52F /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		D776D447230F208000836B6C /* SparqCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparqCollection.swift; sourceTree = "<group>"; };
+		D776D449230F221B00836B6C /* PhotoPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewCell.swift; sourceTree = "<group>"; };
+		D776D44B230F2B1000836B6C /* NotePreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePreviewCell.swift; sourceTree = "<group>"; };
 		D7B8D6AD22F2928B00B1552E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D7B8D6AF22F2929100B1552E /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		D7B8D6B122F292B100B1552E /* RecentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentView.swift; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 				D709907C230AEF530067FBC0 /* NewThoughtCell.swift */,
 				D709907E230AEF590067FBC0 /* HomeCell.swift */,
 				D709908D230BE5CF0067FBC0 /* RecentCell.swift */,
+				D776D44D230F2B2000836B6C /* Sparq */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -154,6 +161,7 @@
 			children = (
 				D7099083230AF7FB0067FBC0 /* HomeTab.swift */,
 				D709908B230BE4C10067FBC0 /* MicroThoughtView.swift */,
+				D776D447230F208000836B6C /* SparqCollection.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -168,6 +176,15 @@
 				D749130922F32329000FE52F /* SparqComponent.swift */,
 			);
 			path = SparqComponents;
+			sourceTree = "<group>";
+		};
+		D776D44D230F2B2000836B6C /* Sparq */ = {
+			isa = PBXGroup;
+			children = (
+				D776D449230F221B00836B6C /* PhotoPreviewCell.swift */,
+				D776D44B230F2B1000836B6C /* NotePreviewCell.swift */,
+			);
+			path = Sparq;
 			sourceTree = "<group>";
 		};
 		D7B8D6AC22F2928300B1552E /* View */ = {
@@ -434,10 +451,12 @@
 				D7B8D6B022F2929100B1552E /* HomeController.swift in Sources */,
 				D749130122F32172000FE52F /* Note.swift in Sources */,
 				D7099081230AEFBB0067FBC0 /* UICollectionView.swift in Sources */,
+				D776D448230F208000836B6C /* SparqCollection.swift in Sources */,
 				D749130322F32177000FE52F /* Link.swift in Sources */,
 				D7099084230AF7FB0067FBC0 /* HomeTab.swift in Sources */,
 				D749130C22F33C9D000FE52F /* Medium.swift in Sources */,
 				D709908E230BE5CF0067FBC0 /* RecentCell.swift in Sources */,
+				D776D44C230F2B1000836B6C /* NotePreviewCell.swift in Sources */,
 				D7D3ECC722F269A900831C85 /* ViewController.swift in Sources */,
 				D749131022F347D5000FE52F /* Feeling.swift in Sources */,
 				D7B8D6AE22F2928B00B1552E /* HomeView.swift in Sources */,
@@ -466,6 +485,7 @@
 				D749130722F321B3000FE52F /* Audio.swift in Sources */,
 				D7B8D6BD22F2AB3100B1552E /* API.swift in Sources */,
 				D7B8D6CE22F2B45800B1552E /* UITableView.swift in Sources */,
+				D776D44A230F221B00836B6C /* PhotoPreviewCell.swift in Sources */,
 				D7B8D6B622F2A88800B1552E /* HomeDelegate.swift in Sources */,
 				D7B8D6D222F2BC0500B1552E /* PersistantService.swift in Sources */,
 				D749130A22F32329000FE52F /* SparqComponent.swift in Sources */,
