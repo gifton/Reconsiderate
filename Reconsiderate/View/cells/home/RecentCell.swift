@@ -15,9 +15,17 @@ class RecentCell: UITableViewCell {
     
     // MARK: Private vars
     private var thoughtTitle = UILabel("Thoughts")
+    private var bottomOfThoughts: CGFloat = 0
+    private var recentSparqs = SparqCollection(withTitle: true, isPreview: true)
     
     // MARK: public vars
     public var toHome = UIButton()
+    public var cvDatasource: UICollectionViewDataSource? {
+        didSet {
+            recentSparqs.datasource = cvDatasource
+            setSparqs()
+        }
+    }
     
     private func setThoughts() {
         var yPos = CGFloat(250)
@@ -29,6 +37,9 @@ class RecentCell: UITableViewCell {
             
             yPos += Device.padding.medium.rawValue + view.height
         }
+        
+        // 36 is height of single thought, to get bottom add to last thoughts origin
+        bottomOfThoughts = yPos + 36
     }
     
     private func setHeader() {
@@ -51,5 +62,11 @@ class RecentCell: UITableViewCell {
         
         addSubview(thoughtTitle)
         addSubview(toHome)
+    }
+    
+    private func setSparqs() {
+        recentSparqs.frame.origin = CGPoint(x: 0, y: bottomOfThoughts + 30)
+        
+        addSubview(recentSparqs)
     }
 }

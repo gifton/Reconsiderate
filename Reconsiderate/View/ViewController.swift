@@ -52,6 +52,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
         let cell = tableView.dequeueReusableCell(withClass: RecentCell.self, for: indexPath)
         cell.toHome.addTapGestureRecognizer(action: scrollToHome)
+        cell.cvDatasource = self
         return cell
     }
     
@@ -94,4 +95,16 @@ protocol HomeControllerDelegate {
 
 enum HomeCells {
     case newThought, home, recent
+}
+
+extension ViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withClass: NotePreviewCell.self, for: indexPath)
+        
+        return cell
+    }
 }
