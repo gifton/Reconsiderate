@@ -4,7 +4,11 @@ import UIKit
 
 class SparqCollection: UIView {
     init(withTitle: Bool, isPreview: Bool) {
-        
+        if isPreview {
+            sparqScrollDirection = .horizontal
+        } else {
+            sparqScrollDirection = .vertical
+        }
         var height: CGFloat = 0
         
         if isPreview {
@@ -18,7 +22,7 @@ class SparqCollection: UIView {
         }
         
         super.init(frame: CGRect(origin: .zero, size: CGSize(width: Device.width, height: height)))
-        backgroundColor = .blue
+        backgroundColor = .white
     }
     
     public var datasource: UICollectionViewDataSource? {
@@ -28,13 +32,16 @@ class SparqCollection: UIView {
         }
     }
     
+    private var sparqScrollDirection: UICollectionView.ScrollDirection
     private var title: UILabel? = UILabel("Sparqs")
     private var cv: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = Device.previewTile
         layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 15
         
-        let cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: Device.width, height: Device.previewTile.height), collectionViewLayout: layout)
+        let cv = UICollectionView(frame: CGRect(x: 0, y: 50, width: Device.width, height: Device.previewTile.height), collectionViewLayout: layout)
+        cv.backgroundColor = .white
         
         return cv
     }()
@@ -44,7 +51,6 @@ class SparqCollection: UIView {
     }
     
     private func setViews() {
-        cv.bottom = bottom - 55
         cv.delegate = self
         cv.register(cellWithClass: NotePreviewCell.self)
         

@@ -4,7 +4,7 @@ import UIKit
 class NotePreviewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .black
+        backgroundColor = Device.colors.lightGray
         layer.cornerRadius = 7
         styleView()
     }
