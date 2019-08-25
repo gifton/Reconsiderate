@@ -13,7 +13,7 @@ public class Photo: NSManagedObject {
     
     // MARK: Objects
     @NSManaged public var rawPhoto: Data
-    @NSManaged public var detail: String?
+    @NSManaged public var caption: String?
     
     // MARK: Relationship
     @NSManaged public var sparq: Sparq

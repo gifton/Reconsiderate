@@ -52,6 +52,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
         let cell = tableView.dequeueReusableCell(withClass: RecentCell.self, for: indexPath)
         cell.toHome.addTapGestureRecognizer(action: scrollToHome)
+        cell.viewModel = RecentCellViewModel()
         cell.cvDatasource = self
         return cell
     }

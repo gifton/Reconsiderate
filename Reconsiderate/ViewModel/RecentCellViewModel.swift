@@ -1,9 +1,21 @@
-//
-//  RecentCellViewModel.swift
-//  Reconsiderate
-//
-//  Created by Dev on 8/23/19.
-//  Copyright © 2019 Wesaturate. All rights reserved.
-//
 
-import Foundation
+import UIKit
+
+class RecentCellViewModel: NSObject {
+    
+//    init(withRecentSparqs sparqs: [SparqComponent], andThoughts thoughts: [Thought]) {
+//        components = Replicator.randomSparqs()
+//        self.thoughts = Replicator.randomThoughts()
+//        super.init()
+//    }
+    
+    override init() {
+        components = Replicator.randomSparqs()
+        self.thoughts = Replicator.randomThoughts()
+        super.init()
+    }
+    
+    public var components: [SparqComponent]
+    public var thoughts: [Thought]
+    
+}

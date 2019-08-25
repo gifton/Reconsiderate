@@ -20,6 +20,7 @@ class RecentCell: UITableViewCell {
     
     // MARK: public vars
     public var toHome = UIButton()
+    public var viewModel: RecentCellViewModel?
     public var cvDatasource: UICollectionViewDataSource? {
         didSet {
             recentSparqs.datasource = cvDatasource
@@ -29,7 +30,8 @@ class RecentCell: UITableViewCell {
     
     private func setThoughts() {
         var yPos = CGFloat(250)
-        for _ in 0...4 {
+        let count = viewModel?.thoughts.count ?? 4
+        for _ in 0...count {
             let view = MicroThoughtView()
             view.frame.origin = CGPoint(x: 50, y: yPos)
             
