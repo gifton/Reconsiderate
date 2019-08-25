@@ -13,9 +13,9 @@ class MicroThoughtView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    var thought: Thought
+    var thought: Thought?
     
-    private var icon = UILabel(String.randomEmoji())
+    private var icon = UILabel()
     private var title = UILabel("290 sparqs")
     private var date = UILabel()
     
@@ -25,6 +25,7 @@ class MicroThoughtView: UIView {
         
         // icon
         icon.frame = CGRect(x: Device.padding.medium.rawValue, y: 2, width: 25, height: 32)
+        icon.text = thought?.icon ?? String.randomEmoji()
         
         // title
         title.frame = CGRect(x: icon.right + 25, y: 0, width: frame.width - 100 - icon.width - 25, height: frame.height)
