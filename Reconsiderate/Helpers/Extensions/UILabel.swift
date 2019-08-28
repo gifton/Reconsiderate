@@ -40,20 +40,31 @@ extension UILabel {
         self.text = output
     }
     
-    // Required height for a label
-    public var requiredHeight: CGFloat {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: Device.width, height: CGFloat.greatestFiniteMagnitude))
-        label.numberOfLines = 0
-        label.lineBreakMode = NSLineBreakMode.byWordWrapping
-        label.font = font
-        label.text = text
-        label.attributedText = attributedText
-        label.sizeToFit()
-        return label.frame.height
-    }
-    
     convenience init(_ payload: String) {
         self.init()
         text = payload
+    }
+    
+    /**
+     Highlight ibdividual chars in a label.
+     
+     - parameter value: The full text.
+     - parameter highlight: The text to be highlighted.
+     usage: call function during search and set search payload to parameter highlight: String?
+     */
+    func setText(value: String?, highlight: String?) {
+        
+        guard let value = value, let highlight = highlight else { return }
+        
+        let attributedText = NSMutableAttributedString(string: value)
+        let range = (value as NSString).range(of: highlight, options: .caseInsensitive)
+        let strokeTextAttributes: [NSAttributedString.Key: Any] = [
+            .backgroundColor: UIColor.yellow,
+            .foregroundColor: UIColor.black
+        ]
+        
+        attributedText.addAttributes(strokeTextAttributes, range: range)
+        self.attributedText = attributedText
+        
     }
 }

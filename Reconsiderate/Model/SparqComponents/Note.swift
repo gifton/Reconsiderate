@@ -2,37 +2,25 @@
 import CoreData
 import UIKit
 
-@objc(Note)
-public class Note: NSManagedObject {
-    
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Note> {
-        return NSFetchRequest<Note>(entityName: "Note")
+// note object converts the Sparq objcet into desired outputs
+
+struct Note {
+    init(title: String, detail: String, timeSince: String, thoughtIcon: String) {
+        self.title = title
+        self.detail = detail
+        self.timeSince = timeSince
+        self.thoughtIcon = thoughtIcon
     }
     
+    var title: String
+    var detail: String
+    var timeSince: String
+    var thoughtIcon: String
     
-    // MARK: Objects
-    @NSManaged public var title: String
-    @NSManaged public var detail: String?
-    
-    // MARK: Relationship
-    @NSManaged public var sparq: Sparq
-    
-    // MARK static building func
-    static func insert(into context: NSManagedObjectContext, withTitle title: String, andDetail detail: String, forSparq sparq: Sparq) -> Note {
-        // set variables from builder
-        let note: Note = context.insertObject()
-        note.detail = detail
-        note.title = title
-        
-        note.sparq = sparq
-        
-        return note
-    }
 }
 
-// MARK: Photo SparqComponentConformance
+// MARK: SparqComponent conformance
 extension Note: SparqComponent {
-    
     var type: SparqType {
         return .note
     }
@@ -41,11 +29,15 @@ extension Note: SparqComponent {
         return nil
     }
     
-}
-
-// MARK: Photo Managed protocol Conformance
-extension Note: Managed {
-    static var defaultSortDescriptors: [NSSortDescriptor] {
-        return [NSSortDescriptor(key: #keyPath(sparq.trait.date), ascending: false)]
+    init(_ sparq: Sparq) {
+        guard let title = sparq.title, let detail = sparq.detail else {
+            fatalError("sparq object could not be parsed")
+        }
+        let df = DateFormatter()
+        timeSince = df.timeSince(from: sparq.trait.date)
+        
+        self.title = title
+        self.detail = detail
+        self.thoughtIcon = sparq.thought.icon
     }
 }

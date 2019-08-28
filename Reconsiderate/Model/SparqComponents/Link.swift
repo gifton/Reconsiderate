@@ -1,56 +1,35 @@
 
-import CoreData
 import UIKit
 
-@objc(Link)
-public class Link: NSManagedObject {
-    
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Link> {
-        return NSFetchRequest<Link>(entityName: "Link")
+struct Link {
+    init(url: URL, description: String, detail: String) {
+        self.url = url
+        self.description = description
+        self.detail = detail
     }
     
-    
-    // MARK: Objects
-    @NSManaged public var link: String
-    @NSManaged public var detail: String?
-    @NSManaged public var websiteDescription: String?
-    
-    // MARK: Relationship
-    @NSManaged public var sparq: Sparq
-    
-    var id: String  = ""
-    
-    // MARK static building func
-    static func insert(into context: NSManagedObjectContext, withLink url: String, andLinkDescription description: String, andDetail detail: String, forSparq sparq: Sparq) -> Link {
-        
-        // set variables from builder
-        let link: Link = context.insertObject()
-        
-        link.detail = detail
-        link.websiteDescription = description
-        link.link = url
-        link.sparq = sparq
-        
-        return link
-    }
+    var url: URL
+    var description: String
+    var detail: String
 }
 
-// MARK: Photo SparqComponentConformance
+// MARK: Link SparqComponent conformance
 extension Link: SparqComponent {
-    
-    var type: SparqType {
-        return .link
+    init(_ sparq: Sparq) {
+        guard let link: URL = URL(string: sparq.link!),
+            let detail = sparq.detail else {
+            fatalError("Unable to parse sparq")
+        }
+        url = link
+        description = ""
+        
+        self.detail = detail
     }
     
     var calculatedHeight: CGFloat? {
         return nil
     }
-    
-}
-
-// MARK: Photo Managed protocol Conformance
-extension Link: Managed {
-    static var defaultSortDescriptors: [NSSortDescriptor] {
-        return [NSSortDescriptor(key: #keyPath(sparq.trait.date), ascending: false)]
+    var type: SparqType {
+        return .link
     }
 }

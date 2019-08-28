@@ -40,6 +40,8 @@
 		D776D4582310448800836B6C /* RecentCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776D4572310448800836B6C /* RecentCellViewModel.swift */; };
 		D776D45A23125DF600836B6C /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776D45923125DF600836B6C /* HomeCoordinator.swift */; };
 		D776D45D2314B9D500836B6C /* NGDB-15.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D776D45B2314B9D500836B6C /* NGDB-15.xcdatamodeld */; };
+		D776D45F231714C000836B6C /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776D45E231714C000836B6C /* DateFormatter.swift */; };
+		D776D461231725EB00836B6C /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776D460231725EB00836B6C /* Double.swift */; };
 		D7B8D6AE22F2928B00B1552E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B8D6AD22F2928B00B1552E /* HomeView.swift */; };
 		D7B8D6B022F2929100B1552E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B8D6AF22F2929100B1552E /* HomeController.swift */; };
 		D7B8D6B222F292B100B1552E /* RecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B8D6B122F292B100B1552E /* RecentView.swift */; };
@@ -101,6 +103,8 @@
 		D776D4572310448800836B6C /* RecentCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCellViewModel.swift; sourceTree = "<group>"; };
 		D776D45923125DF600836B6C /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		D776D45C2314B9D500836B6C /* NGDB-15.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "NGDB-15.xcdatamodel"; sourceTree = "<group>"; };
+		D776D45E231714C000836B6C /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		D776D460231725EB00836B6C /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		D7B8D6AD22F2928B00B1552E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D7B8D6AF22F2929100B1552E /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		D7B8D6B122F292B100B1552E /* RecentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentView.swift; sourceTree = "<group>"; };
@@ -297,6 +301,8 @@
 				D7099080230AEFBB0067FBC0 /* UICollectionView.swift */,
 				D7099085230B15820067FBC0 /* UILabel.swift */,
 				D7099087230B16660067FBC0 /* String.swift */,
+				D776D45E231714C000836B6C /* DateFormatter.swift */,
+				D776D460231725EB00836B6C /* Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -473,6 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D776D45F231714C000836B6C /* DateFormatter.swift in Sources */,
 				D776D45223102CAF00836B6C /* LinkPreviewCell.swift in Sources */,
 				D7B8D6C822F2B36600B1552E /* CGRect.swift in Sources */,
 				D776D4582310448800836B6C /* RecentCellViewModel.swift in Sources */,
@@ -525,6 +532,7 @@
 				D7B8D6D222F2BC0500B1552E /* PersistantService.swift in Sources */,
 				D749130A22F32329000FE52F /* SparqComponent.swift in Sources */,
 				D7B8D6C422F2B30900B1552E /* UIStackView.swift in Sources */,
+				D776D461231725EB00836B6C /* Double.swift in Sources */,
 				D776D45D2314B9D500836B6C /* NGDB-15.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
