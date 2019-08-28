@@ -7,7 +7,7 @@ public class Photo: NSManagedObject {
     
     
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Photo> {
-        return NSFetchRequest<Photo>(entityName: "PhotoEntry")
+        return NSFetchRequest<Photo>(entityName: "Photo")
     }
     
     
@@ -19,6 +19,19 @@ public class Photo: NSManagedObject {
     @NSManaged public var sparq: Sparq
     
     var id: String  = ""
+    
+    // MARK static building func
+    static func insert(into context: NSManagedObjectContext, wuthPhotoData rawPhoto: Data, andDetail detail: String, forSparq sparq: Sparq) -> Photo {
+        
+        // set variables from builder
+        let photo: Photo = context.insertObject()
+        
+        photo.caption = detail
+        photo.rawPhoto = rawPhoto
+        photo.sparq = sparq
+        
+        return photo
+    }
 }
 
 // MARK: Photo SparqComponentConformance

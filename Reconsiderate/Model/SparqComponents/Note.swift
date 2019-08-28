@@ -6,7 +6,7 @@ import UIKit
 public class Note: NSManagedObject {
     
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Note> {
-        return NSFetchRequest<Note>(entityName: "PhotoEntry")
+        return NSFetchRequest<Note>(entityName: "Note")
     }
     
     
@@ -16,7 +16,18 @@ public class Note: NSManagedObject {
     
     // MARK: Relationship
     @NSManaged public var sparq: Sparq
-    var id: String  = ""
+    
+    // MARK static building func
+    static func insert(into context: NSManagedObjectContext, withTitle title: String, andDetail detail: String, forSparq sparq: Sparq) -> Note {
+        // set variables from builder
+        let note: Note = context.insertObject()
+        note.detail = detail
+        note.title = title
+        
+        note.sparq = sparq
+        
+        return note
+    }
 }
 
 // MARK: Photo SparqComponentConformance

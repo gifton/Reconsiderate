@@ -4,31 +4,31 @@
         <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="websiteDescription" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="sparq" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sparq" inverseName="link" inverseEntity="Sparq" syncable="YES"/>
+        <relationship name="sparq" maxCount="1" deletionRule="Nullify" destinationEntity="Sparq" inverseName="link" inverseEntity="Sparq" syncable="YES"/>
     </entity>
     <entity name="Note" representedClassName="Note" parentEntity="Sparq" syncable="YES">
         <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="sparq" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sparq" inverseName="note" inverseEntity="Sparq" syncable="YES"/>
+        <relationship name="sparq" maxCount="1" deletionRule="Nullify" destinationEntity="Sparq" inverseName="note" inverseEntity="Sparq" syncable="YES"/>
     </entity>
     <entity name="Photo" representedClassName="Photo" parentEntity="Sparq" syncable="YES">
         <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rawPhoto" optional="YES" attributeType="Binary" syncable="YES"/>
-        <relationship name="sparq" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sparq" inverseName="photo" inverseEntity="Sparq" syncable="YES"/>
+        <relationship name="sparq" maxCount="1" deletionRule="Nullify" destinationEntity="Sparq" inverseName="photo" inverseEntity="Sparq" syncable="YES"/>
     </entity>
     <entity name="Recording" representedClassName="Recording" parentEntity="Sparq" syncable="YES" codeGenerationType="class">
         <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="path" optional="YES" attributeType="URI" syncable="YES"/>
-        <relationship name="sparq" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sparq" inverseName="recording" inverseEntity="Sparq" syncable="YES"/>
+        <relationship name="sparq" maxCount="1" deletionRule="Nullify" destinationEntity="Sparq" inverseName="recording" inverseEntity="Sparq" syncable="YES"/>
     </entity>
     <entity name="Sparq" representedClassName="Sparq" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="link" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Link" inverseName="sparq" inverseEntity="Link" syncable="YES"/>
-        <relationship name="note" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Note" inverseName="sparq" inverseEntity="Note" syncable="YES"/>
-        <relationship name="photo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Photo" inverseName="sparq" inverseEntity="Photo" syncable="YES"/>
-        <relationship name="recording" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recording" inverseName="sparq" inverseEntity="Recording" syncable="YES"/>
-        <relationship name="thought" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Thought" inverseName="sparqs" inverseEntity="Thought" syncable="YES"/>
-        <relationship name="trait" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Trait" inverseName="sparq" inverseEntity="Trait" syncable="YES"/>
+        <relationship name="note" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Note" inverseName="sparq" inverseEntity="Note" syncable="YES"/>
+        <relationship name="photo" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Photo" inverseName="sparq" inverseEntity="Photo" syncable="YES"/>
+        <relationship name="recording" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Recording" inverseName="sparq" inverseEntity="Recording" syncable="YES"/>
+        <relationship name="thought" maxCount="1" deletionRule="Nullify" destinationEntity="Thought" inverseName="sparqs" inverseEntity="Thought" syncable="YES"/>
+        <relationship name="trait" maxCount="1" deletionRule="Cascade" destinationEntity="Trait" inverseName="sparq" inverseEntity="Trait" syncable="YES"/>
     </entity>
     <entity name="Thought" representedClassName="Thought" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>

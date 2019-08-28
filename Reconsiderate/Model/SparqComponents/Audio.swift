@@ -6,9 +6,8 @@ import UIKit
 public class Audio: NSManagedObject {
     
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Audio> {
-        return NSFetchRequest<Audio>(entityName: "PhotoEntry")
+        return NSFetchRequest<Audio>(entityName: "Audio")
     }
-    
     
     // MARK: Objects
     @NSManaged public var title: String

@@ -11,7 +11,6 @@ enum SparqType: Int {
 // notes, links, photos, audios all must conform to this
 protocol SparqComponent: NSManagedObject & Managed {
     
-    var id: String { get set }
     var type: SparqType { get }
     var calculatedHeight: CGFloat? { get }
     

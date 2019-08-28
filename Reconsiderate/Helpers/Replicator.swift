@@ -4,7 +4,7 @@ import UIKit
 class Replicator {
     static func newNote() -> Note {
         let note = Note()
-        note.id = "giftonsrandomID"
+//        note.id = "giftonsrandomID"
         note.title = "This is my notes title"
         note.detail = "This is an example note detail"
         

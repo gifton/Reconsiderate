@@ -5,10 +5,11 @@ import UIKit
 
 @objc(Sparq)
 public class Sparq: NSManagedObject {
+    
+    @NSManaged public var id: String
 
     @NSManaged public var trait: Trait
     @NSManaged public var thought: Thought
-    @NSManaged public var id: String
     
     @NSManaged public var note: Note?
     @NSManaged public var link: Link?
