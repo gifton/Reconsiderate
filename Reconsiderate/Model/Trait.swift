@@ -21,7 +21,7 @@ import CoreLocation
 public class Trait: NSManagedObject {
     // MARK: Core Data properties
     @NSManaged public var feelings: String
-    @NSManaged public var date: Date
+    @NSManaged public var createdAt: Date
     @NSManaged public var id: String
     @NSManaged public var medium: Int
     @NSManaged public var latitude: NSNumber?

@@ -1,54 +1,47 @@
-//
-//import UIKit
-//
-//class Replicator {
-//    static func newNote() -> Note {
-//        let note = Note()
-////        note.id = "giftonsrandomID"
-//        note.title = "This is my notes title"
-//        note.detail = "This is an example note detail"
-//
-//        return note
-//    }
-//    static func newPhoto() -> Photo {
-//        let photo = Photo()
-//        photo.id = "GiftonsrandomID2"
-//        photo.caption = "This is an example note caption"
-//        if let data: Data = UIImage(named: "lightbulb")?.pngData() {
-//            photo.rawPhoto = data
-//        }
-//
-//        return photo
-//    }
-//
-//    static func newLink() -> Link {
-//        let link = Link()
-//        link.id = "GiftonsrandomID2"
-//        link.detail = "wesaturate is a platform that lets you upload and download free RAW and JPEG photos"
-//        link.link = "https://wesaturate.com"
-//
-//        return link
-//    }
-//
-//    static func randomThought() -> Thought {
-//        let t = Thought()
-//        t.id = "GiftonsStupidID243597"
-//        t.title = "This is a test Thought"
-//        t.icon = .randomEmoji()
-//
-//        return t
-//    }
-//
-//    static func randomThoughts() -> [Thought] {
-//        var t = [Thought]()
-//        for _ in 1...5 {
-//            t.append(randomThought())
-//        }
-//
-//        return t
-//    }
-//
-//    static func randomSparqs() -> [SparqComponent] {
-//        return [newLink(), newPhoto(), newPhoto(), newNote(), newNote(), newNote(), newPhoto(), newLink()]
-//    }
-//}
+
+import UIKit
+import CoreData
+import CoreLocation
+
+class ReplicatorService: NSObject {
+    init(withContext context: NSManagedObjectContext) {
+        self.context = context
+    }
+    
+    var context: NSManagedObjectContext
+    
+    public func setData() {
+        
+    }
+    
+}
+
+// MARK: private building methods for thoughts and sparqs
+// thought 1: what is rethought?
+    // 2 notes
+        // the philosophy
+        // what I hope you get out of nigma
+    // 2 images
+        // screenshots showing where to go for specific things
+        // image of dog as examoke
+    // 1 link
+        // to wesaturate for example
+// thought 2: Example 1
+// thought 3: example 2
+extension ReplicatorService {
+    func createWelcomeThought() {
+        
+        let t = Thought.insert(in: context, title: "Welcome to Nigma!", icon: "💡", location: CLLocation())
+        let ns1 = Sparq.insert
+        
+        
+    }
+    
+    private func save() {
+        do {
+            try context.save()
+        } catch {
+            print("ther was an error saving replicator data: \(error.localizedDescription)")
+        }
+    }
+}

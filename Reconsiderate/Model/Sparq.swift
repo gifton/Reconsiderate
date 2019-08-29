@@ -21,6 +21,13 @@ public class Sparq: NSManagedObject {
     @NSManaged public var thought: Thought
     
     
+    static func insert(into moc: NSManagedObjectContext, with component: SparqComponent) -> Sparq? {
+        let sparq: Sparq = moc.insertObject()
+        UserDefaults.creatededNewSparq()
+        sparq.id = UserDefaults.sparqID
+        
+        return nil
+    }
     
 }
 

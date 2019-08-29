@@ -4,7 +4,7 @@ extension UserDefaults {
     
     enum Keys {
         static let thoughtID     = "ThoughtID"
-        static let entryID       = "EntryID"
+        static let sparqID       = "SparqID"
         static let name          = "USERname"
         static let email         = "USERemail"
         static let authenticated = "USERauthenticate"
@@ -16,10 +16,10 @@ extension UserDefaults {
         let defaultCount = defaults.integer(forKey: UserDefaults.Keys.thoughtID)
         defaults.set(defaultCount + 1, forKey: UserDefaults.Keys.thoughtID)
     }
-    static func creatededNewEntry() {
+    static func creatededNewSparq() {
         let defaults = UserDefaults.standard
-        let defaultCount = defaults.integer(forKey: UserDefaults.Keys.entryID)
-        defaults.set(defaultCount + 1, forKey: UserDefaults.Keys.entryID)
+        let defaultCount = defaults.integer(forKey: UserDefaults.Keys.sparqID)
+        defaults.set(defaultCount + 1, forKey: UserDefaults.Keys.sparqID)
     }
     static var thoughtID: String {
         let defaults = UserDefaults.standard
@@ -27,10 +27,10 @@ extension UserDefaults {
         
         return "rcnsdr-pDBI-T\(num)"
     }
-    static var currentEntry: String {
+    static var sparqID: String {
         let defaults = UserDefaults.standard
-        let num = defaults.integer(forKey: UserDefaults.Keys.entryID)
+        let num = defaults.integer(forKey: UserDefaults.Keys.sparqID)
         
-        return "rcnsdr-pDBI-E\(num)"
+        return "rcnsdr-pDBI-s\(num)"
     }
 }

@@ -18,10 +18,16 @@ import UIKit
 public class Topic: NSManagedObject {
     
     @NSManaged public var title: String
-    @NSManaged public var date: Date
+    @NSManaged public var createdAt: Date
     @NSManaged public var lastUpdate: Date
     
-    
+    static func insert(into moc: NSManagedObjectContext, title: String, date: Date) -> Trait {
+        let topic: Topic = moc.insertObject()
+        
+        topic.title = title
+        topic.date = date
+        topic.lastUpdate = Date()
+    }
 }
 
 
