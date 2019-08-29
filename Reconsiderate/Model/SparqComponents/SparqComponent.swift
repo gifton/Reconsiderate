@@ -12,6 +12,7 @@ enum SparqType: Int {
 protocol SparqComponent {
     
     var type: SparqType { get }
+    var thoughtIcon: String { get set}
     var calculatedHeight: CGFloat? { get }
     
     init(_ sparq: Sparq)

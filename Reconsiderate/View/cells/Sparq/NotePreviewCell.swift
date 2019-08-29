@@ -24,7 +24,7 @@ class NotePreviewCell: UICollectionViewCell {
         title.text = note.title
         bodyPreview.text = note.detail
         date.getStringFromDate(date: Date(), withStyle: .short)
-        thoughtIcon.text = note.sparq.thought.icon
+        thoughtIcon.text = note.thoughtIcon
         
         setView()
     }

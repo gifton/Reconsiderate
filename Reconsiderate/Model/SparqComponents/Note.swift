@@ -13,7 +13,7 @@ struct Note {
     }
     
     var title: String
-    var detail: String
+    var detail: String?
     var timeSince: String
     var thoughtIcon: String
     
@@ -30,14 +30,16 @@ extension Note: SparqComponent {
     }
     
     init(_ sparq: Sparq) {
-        guard let title = sparq.title, let detail = sparq.detail else {
+        // since all content except trait and ID are optional, guard into proper objects, throw fatal error since data is corrupt
+        guard let title = sparq.title else {
             fatalError("sparq object could not be parsed")
         }
+        
         let df = DateFormatter()
         timeSince = df.timeSince(from: sparq.trait.date)
         
         self.title = title
-        self.detail = detail
+        self.detail = sparq.detail
         self.thoughtIcon = sparq.thought.icon
     }
 }

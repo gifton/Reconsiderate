@@ -10,12 +10,12 @@ class RecentCellViewModel: NSObject {
 //    }
     
     override init() {
-        components = Replicator.randomSparqs()
-        self.thoughts = Replicator.randomThoughts()
+//        components = Replicator.randomSparqs()
+//        self.thoughts = Replicator.randomThoughts()
         super.init()
     }
     
-    public var components: [SparqComponent]
-    public var thoughts: [Thought]
+    public var components = [SparqComponent]()
+    public var thoughts = [Thought]()
     
 }

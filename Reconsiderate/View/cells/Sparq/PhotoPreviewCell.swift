@@ -20,9 +20,9 @@ class PhotoPreviewCell: UICollectionViewCell {
     
     public func addContext(_ photo: Photo) {
         
-        self.photo.image = UIImage(data: photo.rawPhoto)
+        self.photo.image = photo.photo
         dateLabel.getStringFromDate(date: Date(), withStyle: .short)
-        thoughtIcon.text = photo.sparq.thought.icon
+        thoughtIcon.text = photo.thoughtIcon
         
     }
     

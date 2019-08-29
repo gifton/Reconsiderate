@@ -2,28 +2,30 @@
 import UIKit
 
 struct Link {
-    init(url: URL, description: String, detail: String) {
+    init(url: URL, websiteDescription: String, detail: String, thoughtIcon: String) {
         self.url = url
-        self.description = description
+        self.websiteDescription = websiteDescription
         self.detail = detail
+        self.thoughtIcon = thoughtIcon
     }
     
     var url: URL
-    var description: String
-    var detail: String
+    var websiteDescription: String
+    var thoughtIcon: String
+    var detail: String?
 }
 
 // MARK: Link SparqComponent conformance
 extension Link: SparqComponent {
     init(_ sparq: Sparq) {
-        guard let link: URL = URL(string: sparq.link!),
-            let detail = sparq.detail else {
+        guard let link: URL = URL(string: sparq.link!) else {
             fatalError("Unable to parse sparq")
         }
         url = link
-        description = ""
+        websiteDescription = ""
         
-        self.detail = detail
+        detail = sparq.detail
+        thoughtIcon = sparq.thought.icon
     }
     
     var calculatedHeight: CGFloat? {
