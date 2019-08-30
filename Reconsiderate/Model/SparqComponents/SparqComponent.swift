@@ -1,5 +1,6 @@
 import CoreData
 import UIKit
+import CoreLocation
 
 enum SparqType: Int {
     case link = 0
@@ -14,6 +15,7 @@ protocol SparqComponent {
     var type: SparqType { get }
     var thoughtIcon: String { get set}
     var calculatedHeight: CGFloat? { get }
+    var location: CLLocation? { get set }
     
     init(_ sparq: Sparq)
 }

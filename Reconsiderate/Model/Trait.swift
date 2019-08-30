@@ -58,7 +58,7 @@ extension Trait {
 // MARK: Trait conformance to managed protocol
 extension Trait: Managed {
     static var defaultSortDescriptors: [NSSortDescriptor] {
-        return [NSSortDescriptor(key: #keyPath(date), ascending: false)]
+        return [NSSortDescriptor(key: #keyPath(createdAt), ascending: false)]
     }
 }
 

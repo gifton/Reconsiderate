@@ -19,11 +19,11 @@
         <attribute name="title" optional="YES" attributeType="String" spotlightIndexingEnabled="YES" syncable="YES"/>
         <relationship name="sparqs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sparq" inverseName="thought" inverseEntity="Sparq" syncable="YES"/>
     </entity>
-    <entity name="Topic" representedClassName="Topic" syncable="YES" codeGenerationType="class">
+    <entity name="Topic" representedClassName="Topic" syncable="YES">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="lastUpdate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="trait" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trait" syncable="YES"/>
+        <relationship name="trait" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trait" inverseName="topic" inverseEntity="Trait" syncable="YES"/>
     </entity>
     <entity name="Trait" representedClassName="Trait" syncable="YES">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -34,11 +34,12 @@
         <attribute name="medium" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="topics" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="sparq" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sparq" inverseName="trait" inverseEntity="Sparq" syncable="YES"/>
+        <relationship name="topic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Topic" inverseName="trait" inverseEntity="Topic" syncable="YES"/>
     </entity>
     <elements>
         <element name="Sparq" positionX="-36" positionY="72" width="128" height="165"/>
         <element name="Thought" positionX="-54" positionY="36" width="128" height="150"/>
-        <element name="Trait" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Trait" positionX="-63" positionY="-18" width="128" height="180"/>
         <element name="Topic" positionX="-45" positionY="99" width="128" height="105"/>
     </elements>
 </model>
