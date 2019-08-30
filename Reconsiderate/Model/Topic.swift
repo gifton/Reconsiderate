@@ -21,12 +21,14 @@ public class Topic: NSManagedObject {
     @NSManaged public var createdAt: Date
     @NSManaged public var lastUpdate: Date
     
-    static func insert(into moc: NSManagedObjectContext, title: String, date: Date) -> Trait {
+    static func insert(into moc: NSManagedObjectContext, title: String, date: Date) -> Topic {
         let topic: Topic = moc.insertObject()
         
         topic.title = title
-        topic.date = date
+        topic.createdAt = date
         topic.lastUpdate = Date()
+        
+        return topic
     }
 }
 
@@ -34,6 +36,6 @@ public class Topic: NSManagedObject {
 // MARK: managed conformance
 extension Topic: Managed {
     static var defaultSortDescriptors: [NSSortDescriptor] {
-        return [NSSortDescriptor(key: #keyPath(date), ascending: false)]
+        return [NSSortDescriptor(key: #keyPath(createdAt), ascending: false)]
     }
 }

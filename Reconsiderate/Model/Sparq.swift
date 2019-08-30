@@ -47,6 +47,6 @@ extension Sparq {
 // MARK Managed conformance
 extension Sparq: Managed {
     static var defaultSortDescriptors: [NSSortDescriptor] {
-        return [NSSortDescriptor(key: #keyPath(trait.date), ascending: false)]
+        return [NSSortDescriptor(key: #keyPath(trait.createdAt), ascending: false)]
     }
 }

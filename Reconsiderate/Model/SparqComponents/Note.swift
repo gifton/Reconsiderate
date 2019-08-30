@@ -1,6 +1,7 @@
 
 import CoreData
 import UIKit
+import CoreLocation
 
 // note object converts the Sparq objcet into desired outputs
 
@@ -16,11 +17,14 @@ struct Note {
     var detail: String?
     var timeSince: String
     var thoughtIcon: String
+    var location: CLLocation?
     
 }
 
 // MARK: SparqComponent conformance
+// TODO: calculate location based on lat and long
 extension Note: SparqComponent {
+    
     var type: SparqType {
         return .note
     }
@@ -36,10 +40,11 @@ extension Note: SparqComponent {
         }
         
         let df = DateFormatter()
-        timeSince = df.timeSince(from: sparq.trait.date)
+        timeSince = df.timeSince(from: sparq.trait.createdAt)
         
         self.title = title
-        self.detail = sparq.detail
-        self.thoughtIcon = sparq.thought.icon
+        detail = sparq.detail
+        thoughtIcon = sparq.thought.icon
+//        location = sparq.trait.
     }
 }

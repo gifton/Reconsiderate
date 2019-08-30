@@ -31,6 +31,8 @@
 		D749131022F347D5000FE52F /* Feeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = D749130F22F347D5000FE52F /* Feeling.swift */; };
 		D749131222F4171F000FE52F /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D749131122F4171F000FE52F /* UIImage.swift */; };
 		D75F1C61231822C600F69AC2 /* TraitEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F1C60231822C600F69AC2 /* TraitEngine.swift */; };
+		D75F1C632319A79900F69AC2 /* TraitCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F1C622319A79900F69AC2 /* TraitCreator.swift */; };
+		D75F1C652319A84500F69AC2 /* TraitEngineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F1C642319A84500F69AC2 /* TraitEngineDelegate.swift */; };
 		D776D448230F208000836B6C /* SparqCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776D447230F208000836B6C /* SparqCollection.swift */; };
 		D776D44A230F221B00836B6C /* PhotoPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776D449230F221B00836B6C /* PhotoPreviewCell.swift */; };
 		D776D44C230F2B1000836B6C /* NotePreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776D44B230F2B1000836B6C /* NotePreviewCell.swift */; };
@@ -95,6 +97,8 @@
 		D749130F22F347D5000FE52F /* Feeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feeling.swift; sourceTree = "<group>"; };
 		D749131122F4171F000FE52F /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		D75F1C60231822C600F69AC2 /* TraitEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitEngine.swift; sourceTree = "<group>"; };
+		D75F1C622319A79900F69AC2 /* TraitCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitCreator.swift; sourceTree = "<group>"; };
+		D75F1C642319A84500F69AC2 /* TraitEngineDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitEngineDelegate.swift; sourceTree = "<group>"; };
 		D776D447230F208000836B6C /* SparqCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparqCollection.swift; sourceTree = "<group>"; };
 		D776D449230F221B00836B6C /* PhotoPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewCell.swift; sourceTree = "<group>"; };
 		D776D44B230F2B1000836B6C /* NotePreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePreviewCell.swift; sourceTree = "<group>"; };
@@ -267,6 +271,8 @@
 			isa = PBXGroup;
 			children = (
 				D75F1C60231822C600F69AC2 /* TraitEngine.swift */,
+				D75F1C622319A79900F69AC2 /* TraitCreator.swift */,
+				D75F1C642319A84500F69AC2 /* TraitEngineDelegate.swift */,
 				D749130822F32312000FE52F /* SparqComponents */,
 				D7B8D6D622F2BC9B00B1552E /* Thought.swift */,
 				D7B8D6D822F2BCA300B1552E /* Sparq.swift */,
@@ -491,9 +497,11 @@
 				D70990552300334E0067FBC0 /* AppCoordinator.swift in Sources */,
 				D7B8D6B022F2929100B1552E /* HomeController.swift in Sources */,
 				D749130122F32172000FE52F /* Note.swift in Sources */,
+				D75F1C632319A79900F69AC2 /* TraitCreator.swift in Sources */,
 				D7099081230AEFBB0067FBC0 /* UICollectionView.swift in Sources */,
 				D776D448230F208000836B6C /* SparqCollection.swift in Sources */,
 				D749130322F32177000FE52F /* Link.swift in Sources */,
+				D75F1C652319A84500F69AC2 /* TraitEngineDelegate.swift in Sources */,
 				D776D4562310337000836B6C /* Replicator.swift in Sources */,
 				D7099084230AF7FB0067FBC0 /* HomeTab.swift in Sources */,
 				D749130C22F33C9D000FE52F /* Medium.swift in Sources */,

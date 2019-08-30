@@ -19,6 +19,7 @@ import CoreLocation
 
 @objc(Trait)
 public class Trait: NSManagedObject {
+    
     // MARK: Core Data properties
     @NSManaged public var feelings: String
     @NSManaged public var createdAt: Date

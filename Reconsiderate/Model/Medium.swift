@@ -8,10 +8,10 @@ enum Medium: Int {
     
     public static func forVal(_ num: Int) -> Medium {
         switch num {
-        case 0: return Medium.link
-        case 1: return Medium.photo
-        case 2: return Medium.audio
-        default: return Medium.note
+        case 0: return .link
+        case 1: return .photo
+        case 2: return .audio
+        default: return .note
         }
     }
 }

@@ -1,5 +1,6 @@
 
 import UIKit
+import CoreLocation
 
 struct Photo {
     init(photo: UIImage, caption: String?, thoughtIcon: String) {
@@ -12,9 +13,9 @@ struct Photo {
     // MARK: Objects
     var photo: UIImage
     var thoughtIcon: String
-    var caption: String?
-    
     var id: String  = ""
+    var caption: String?
+    var location: CLLocation?
 }
 
 // MARK: Photo SparqComponentConformance
