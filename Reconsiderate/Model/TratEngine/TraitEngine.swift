@@ -42,10 +42,20 @@ class TraitEngine: TraitEngineDelegate {
         let trait: Trait = moc.insertObject()
     
         // set properties
+        trait.feelings = getType()
         
         // save context
         
         completion()
+    }
+    
+    private func getType() -> String {
+        switch component!.type {
+        case .audio: return "Audio"
+        case .note: return "Note"
+        case .photo: return "Photo"
+        case .link: return "Link"
+        }
     }
     
 }

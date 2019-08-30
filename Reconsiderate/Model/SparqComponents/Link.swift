@@ -1,5 +1,6 @@
 
 import UIKit
+import CoreLocation
 
 struct Link {
     init(url: URL, websiteDescription: String, detail: String, thoughtIcon: String) {
@@ -13,10 +14,12 @@ struct Link {
     var websiteDescription: String
     var thoughtIcon: String
     var detail: String?
+    var location: CLLocation?
 }
 
 // MARK: Link SparqComponent conformance
 extension Link: SparqComponent {
+    
     init(_ sparq: Sparq) {
         guard let link: URL = URL(string: sparq.link!) else {
             fatalError("Unable to parse sparq")

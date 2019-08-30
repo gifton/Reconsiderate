@@ -202,6 +202,16 @@
 			path = SparqComponents;
 			sourceTree = "<group>";
 		};
+		D75F1C662319ABB800F69AC2 /* TratEngine */ = {
+			isa = PBXGroup;
+			children = (
+				D75F1C60231822C600F69AC2 /* TraitEngine.swift */,
+				D75F1C622319A79900F69AC2 /* TraitCreator.swift */,
+				D75F1C642319A84500F69AC2 /* TraitEngineDelegate.swift */,
+			);
+			path = TratEngine;
+			sourceTree = "<group>";
+		};
 		D776D44D230F2B2000836B6C /* Sparq */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,9 +280,7 @@
 		D7B8D6B822F2A89D00B1552E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D75F1C60231822C600F69AC2 /* TraitEngine.swift */,
-				D75F1C622319A79900F69AC2 /* TraitCreator.swift */,
-				D75F1C642319A84500F69AC2 /* TraitEngineDelegate.swift */,
+				D75F1C662319ABB800F69AC2 /* TratEngine */,
 				D749130822F32312000FE52F /* SparqComponents */,
 				D7B8D6D622F2BC9B00B1552E /* Thought.swift */,
 				D7B8D6D822F2BCA300B1552E /* Sparq.swift */,
