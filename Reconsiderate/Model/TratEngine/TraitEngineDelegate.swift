@@ -7,6 +7,5 @@ import CoreData
 protocol TraitEngineDelegate {
     init(_ moc: NSManagedObjectContext)
     var trait: Trait? { get }
-    var isComplete: Bool { get }
-    func start(withCompletion completion: @escaping () -> Void)
+    func start()
 }

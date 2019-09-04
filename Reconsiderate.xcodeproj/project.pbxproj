@@ -33,6 +33,7 @@
 		D75F1C61231822C600F69AC2 /* TraitEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F1C60231822C600F69AC2 /* TraitEngine.swift */; };
 		D75F1C632319A79900F69AC2 /* TraitCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F1C622319A79900F69AC2 /* TraitCreator.swift */; };
 		D75F1C652319A84500F69AC2 /* TraitEngineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F1C642319A84500F69AC2 /* TraitEngineDelegate.swift */; };
+		D75F1C77231D99B500F69AC2 /* TopicIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F1C76231D99B500F69AC2 /* TopicIdentifier.swift */; };
 		D776D448230F208000836B6C /* SparqCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776D447230F208000836B6C /* SparqCollection.swift */; };
 		D776D44A230F221B00836B6C /* PhotoPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776D449230F221B00836B6C /* PhotoPreviewCell.swift */; };
 		D776D44C230F2B1000836B6C /* NotePreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776D44B230F2B1000836B6C /* NotePreviewCell.swift */; };
@@ -99,6 +100,7 @@
 		D75F1C60231822C600F69AC2 /* TraitEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitEngine.swift; sourceTree = "<group>"; };
 		D75F1C622319A79900F69AC2 /* TraitCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitCreator.swift; sourceTree = "<group>"; };
 		D75F1C642319A84500F69AC2 /* TraitEngineDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitEngineDelegate.swift; sourceTree = "<group>"; };
+		D75F1C76231D99B500F69AC2 /* TopicIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicIdentifier.swift; sourceTree = "<group>"; };
 		D776D447230F208000836B6C /* SparqCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparqCollection.swift; sourceTree = "<group>"; };
 		D776D449230F221B00836B6C /* PhotoPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewCell.swift; sourceTree = "<group>"; };
 		D776D44B230F2B1000836B6C /* NotePreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePreviewCell.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				D75F1C60231822C600F69AC2 /* TraitEngine.swift */,
 				D75F1C622319A79900F69AC2 /* TraitCreator.swift */,
 				D75F1C642319A84500F69AC2 /* TraitEngineDelegate.swift */,
+				D75F1C76231D99B500F69AC2 /* TopicIdentifier.swift */,
 			);
 			path = TratEngine;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				D7B8D6B622F2A88800B1552E /* HomeDelegate.swift in Sources */,
 				D7B8D6D222F2BC0500B1552E /* PersistantService.swift in Sources */,
 				D749130A22F32329000FE52F /* SparqComponent.swift in Sources */,
+				D75F1C77231D99B500F69AC2 /* TopicIdentifier.swift in Sources */,
 				D7B8D6C422F2B30900B1552E /* UIStackView.swift in Sources */,
 				D776D461231725EB00836B6C /* Double.swift in Sources */,
 				D776D45D2314B9D500836B6C /* NGDB-15.xcdatamodeld in Sources */,

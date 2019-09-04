@@ -34,19 +34,24 @@ class TraitEngine: TraitEngineDelegate {
     private var moc: NSManagedObjectContext
     
     private(set) var trait: Trait?
-    private(set) var isComplete: Bool = false
     
-    func start(withCompletion completion: @escaping () -> Void) {
+    func start() {
         
         // create trait
         let trait: Trait = moc.insertObject()
     
         // set properties
         trait.feelings = getType()
+        trait.addFeelings(creator!.feelings)
+        trait.medium = creator!.component.type.rawValue
+        
+        let loc = CLLocation()
+        trait.longitude = loc.coordinate.longitude as NSNumber
+        trait.latitude = loc.coordinate.latitude as NSNumber
         
         // save context
+        save()
         
-        completion()
     }
     
     private func getType() -> String {
@@ -55,6 +60,14 @@ class TraitEngine: TraitEngineDelegate {
         case .note: return "Note"
         case .photo: return "Photo"
         case .link: return "Link"
+        }
+    }
+    
+    private func save() {
+        do {
+            try moc.save()
+        } catch {
+            print(error)
         }
     }
     

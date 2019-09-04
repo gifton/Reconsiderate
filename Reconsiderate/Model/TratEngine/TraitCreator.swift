@@ -5,12 +5,12 @@ import Foundation
 // trait engine calculates the Trait oibject from its delegate (TraitCreators) accessable variables
 
 
-//    var feelings:   [feeling]
-//    var topics:     [Topic]
+//    var feelings: [feeling]
+//    var topics: [Topic]
 //    var isInternal: Bool
 
 protocol TraitCreator {
-    var feelings: String { get }
+    var feelings: [Feeling] { get }
     var topics: [Topic] { get }
     var component: SparqComponent { get }
     var isInternal: Bool { get }

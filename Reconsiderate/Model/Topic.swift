@@ -30,6 +30,12 @@ public class Topic: NSManagedObject {
         
         return topic
     }
+    
+    // every time a new trait object is created that references this topic
+    // call updated() to note the most current occurance of specific topic
+    func updated() {
+        lastUpdate = Date()
+    }
 }
 
 

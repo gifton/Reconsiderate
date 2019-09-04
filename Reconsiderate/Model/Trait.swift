@@ -54,6 +54,12 @@ extension Trait {
     func addFeeling(_ input: Feeling) {
         feelings.append("," + input.rawValue)
     }
+    func addFeelings(_ input: [Feeling]) {
+        for i in input {
+            addFeeling(i)
+        }
+        
+    }
 }
 
 // MARK: Trait conformance to managed protocol
