@@ -14,6 +14,17 @@ public class Thought: NSManagedObject {
     @NSManaged public var longitude: NSNumber?
     
     @NSManaged public var sparqs: NSSet?
+    
+    var computedSparqs: [Sparq] {
+        guard let iSparqs = sparqs else { return [Sparq]()}
+        var computedSparqs = [Sparq]()
+        for sparq in iSparqs {
+            guard let s: Sparq = sparq as? Sparq else { return [Sparq]() }
+            computedSparqs.append(s)
+        }
+        
+        return computedSparqs
+    }
 }
 
 // MARK: computed properties

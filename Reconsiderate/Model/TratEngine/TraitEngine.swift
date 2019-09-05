@@ -27,7 +27,7 @@ class TraitEngine: TraitEngineDelegate {
     
     public var component: SparqComponent? {
         didSet {
-            
+            start()
         }
     }
     private var creator: TraitCreator?
@@ -39,7 +39,7 @@ class TraitEngine: TraitEngineDelegate {
         
         // create trait
         let trait: Trait = moc.insertObject()
-    
+
         // set properties
         trait.feelings = getType()
         trait.addFeelings(creator!.feelings)

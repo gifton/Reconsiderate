@@ -30,10 +30,10 @@ class ReplicatorService: NSObject {
 // thought 3: example 2
 extension ReplicatorService {
     func createWelcomeThought() {
-        
-        let t = Thought.insert(in: context, title: "Welcome to Nigma!", icon: "💡", location: CLLocation())
-        let ns1 = Sparq.insert
-        
+//
+//        let t = Thought.insert(in: context, title: "Welcome to Nigma!", icon: "💡", location: CLLocation())
+//        let ns1 = Sparq.insert
+//
         
     }
     

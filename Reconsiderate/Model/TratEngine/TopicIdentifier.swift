@@ -7,8 +7,9 @@ import CoreData
 
 class TopicIdentifier {
     
-    init(withMoc moc: NSManagedObjectContext) {
+    init(withMoc moc: NSManagedObjectContext, and trait: Trait) {
         self.moc = moc
+        self.trait = trait
     }
     public var content: String = "" {
         didSet {
@@ -20,6 +21,7 @@ class TopicIdentifier {
     private var moc: NSManagedObjectContext
     private let tagger = NLTagger(tagSchemes: [.nameType])
     private var topics = [Topic]()
+    private var trait: Trait
     
     public func findNamesPeoplePlaces() -> [Topic] {
         let tags = tagger.tags(in: content.startIndex..<content.endIndex, unit: .word, scheme: .lexicalClass,
@@ -32,7 +34,7 @@ class TopicIdentifier {
         
         for (tag, range) in tags {
             let title = String(content[range])
-            let topic = Topic.insert(into: moc, title: title, date: Date())
+            let topic = Topic.insert(into: moc, title: title, for: trait)
             topics.append(topic)
             print("tag: \(String(describing: tag))")
             print("content: \(title)")

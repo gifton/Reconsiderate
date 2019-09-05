@@ -1,4 +1,4 @@
-//struct Trait {
+
 //
 //    var feelings:   [feeling]
 //    var topics:     [Topic]
@@ -7,10 +7,6 @@
 //    var location:   CLLocation
 //    var isInternal: Bool
 //
-//}
-
-
-
 
 
 import CoreData
@@ -21,38 +17,81 @@ import CoreLocation
 public class Trait: NSManagedObject {
     
     // MARK: Core Data properties
-    @NSManaged public var feelings: String
     @NSManaged public var createdAt: Date
+    @NSManaged public var isPersonal: Bool
     @NSManaged public var id: String
     @NSManaged public var medium: Int
     @NSManaged public var latitude: NSNumber?
     @NSManaged public var longitude: NSNumber?
+    @NSManaged public var feelings: String?
     
     @NSManaged public var topics: NSSet?
-    @NSManaged public var sparqs: NSSet?
+    @NSManaged public var sparq: Sparq
     
 }
 
 // MARK: computed properties
 extension Trait {
-    var computedFeelings: [Feeling] {
-        var feelings = [Feeling]()
-        let splitString = self.feelings.split(separator: ",")
+    // feelings are saved as strings seperated by commas, convert into Feeling object
+    var computedFeelings: [Feeling]? {
+        
+        // if there are no feelings, return empty string
+        guard let feelings = feelings else { return nil }
+        var computedFeelings = [Feeling]()
+        
+        // split feelings by comma
+        let splitString = feelings.split(separator: ",")
         for s in splitString {
+            // feeling can be created from raw string, (throws error if not found), continue to next
             guard let f = Feeling(rawValue: String(s)) else { continue }
-            feelings.append(f)
+            computedFeelings.append(f)
         }
-        return feelings
+        return computedFeelings
     }
+    
+    // return computed medium from saved integer
     var computedMedium: Medium {
         return Medium.forVal(medium)
+    }
+    
+    //return location as CLLocation
+    public var location: CLLocation? {
+        guard let lat = latitude, let lon = longitude else { return nil }
+        return CLLocation(latitude: lat.doubleValue, longitude: lon.doubleValue)
+    }
+    
+    static func insert(into moc: NSManagedObjectContext, with feelings: [Feeling], for sparq: Sparq, isPersonal: Bool = false) -> Trait {
+        
+        let trait: Trait = moc.insertObject()
+        
+        // internally calculated objects
+        trait.createdAt = Date()
+        UserDefaults.createdTrait()
+        trait.id = UserDefaults.traitID
+        
+        //save location if available
+        let loc = CLLocation()
+        trait.latitude  = loc.coordinate.latitude as NSNumber
+        trait.longitude = loc.coordinate.longitude as NSNumber
+        
+        
+        // parameter variables
+        trait.addFeelings(feelings)
+        trait.isPersonal = isPersonal
+        
+        return trait
     }
 }
 
 // MARK mutating methods
 extension Trait {
     func addFeeling(_ input: Feeling) {
-        feelings.append("," + input.rawValue)
+        if feelings != nil {
+            feelings! += input.rawValue
+        } else {
+            feelings = input.rawValue
+        }
+        
     }
     func addFeelings(_ input: [Feeling]) {
         for i in input {
