@@ -21,7 +21,7 @@ public class Sparq: NSManagedObject {
     @NSManaged public var thought: Thought
     
     
-    static func insert(into moc: NSManagedObjectContext, with component: SparqComponent, for thought: Thought) -> Sparq? {
+    static func insert(into moc: NSManagedObjectContext, with component: SparqComponent, for thought: Thought) -> Sparq {
         
         let sparq: Sparq = moc.insertObject()
         sparq.thought = thought
