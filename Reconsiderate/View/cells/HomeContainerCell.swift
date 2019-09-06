@@ -51,7 +51,9 @@ extension HomeContainerCell: UICollectionViewDataSource {
         var cell: UICollectionViewCell!
         
         if indexPath.row == 0 {
-            cell = collectionView.dequeueReusableCell(withClass: NewThoughtCell.self, for: indexPath)
+            let cCell = collectionView.dequeueReusableCell(withClass: NewThoughtCell.self, for: indexPath)
+            cCell.delegate = self
+            cell = cCell
         } else {
             // set cell's paramaters, and gestures
             let cCell = collectionView.dequeueReusableCell(withClass: HomeCell.self, for: indexPath)
@@ -68,4 +70,15 @@ extension HomeContainerCell: UICollectionViewDataSource {
         cv.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
     }
     
+}
+
+extension HomeContainerCell: ThoughtCreator {
+    func createThought(fromTitle title: String) {
+        router?.createThought(forTitle: title)
+    }
+}
+
+
+protocol ThoughtCreator {
+    func createThought(fromTitle title: String)
 }

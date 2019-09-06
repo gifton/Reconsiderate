@@ -86,12 +86,17 @@ extension ViewController: HomeControllerDelegate {
     func scrollToHome() {
         tv.scrollToRow(at: IndexPath(item: 0, section: 0), at: .middle, animated: true)
     }
+    
+    func createThought(forTitle title: String) {
+        // make thought
+        print("making a thought with title: \(title)")
+    }
 }
 
 
 protocol HomeControllerDelegate {
     func moveScrollView(to view: HomeCells)
-    
+    func createThought(forTitle title: String)
 }
 
 enum HomeCells {
