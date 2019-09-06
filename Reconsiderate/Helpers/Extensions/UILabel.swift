@@ -34,6 +34,7 @@ extension UILabel {
             formatter.timeStyle = .none
             formatter.doesRelativeDateFormatting = false
             formatter.formattingContext = .listItem
+
             return formatter
         }()
         let output = dateFormatter.string(from: date)
