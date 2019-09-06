@@ -30,12 +30,12 @@ class ThoughtDetailContainerCell: UITableViewCell {
         cv.isPagingEnabled = true
         cv.showsHorizontalScrollIndicator = false
         cv.backgroundColor = Device.colors.primaryPink
-        cv.setBackView(withContent: "Just keep thinking 🐠")
+        cv.setBackView(withContent: "Inspiration strikes without warning ⚡️")
         
         cv.dataSource = self
         
-        cv.register(cellWithClass: NewThoughtCell.self)
-        cv.register(cellWithClass: HomeCell.self)
+        cv.register(cellWithClass: ThoughtDetailMainCell.self)
+//        cv.register(cellWithClass: HomeCell.self)
         
         addSubview(cv)
         
