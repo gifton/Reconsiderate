@@ -42,5 +42,14 @@ extension String {
         let boundingBox = self.boundingRect(with: constraintRect, options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: [NSAttributedString.Key.font: font], context: nil)
         return boundingBox.height
     }
+    
+    var isPalindrome: Bool {
+        let letters = filter { $0.isLetter }
+        guard !letters.isEmpty else { return false }
+        let midIndex = letters.index(letters.startIndex, offsetBy: letters.count / 2)
+        let firstHalf = letters[letters.startIndex..<midIndex]
+        let secondHalf = letters[midIndex..<letters.endIndex].reversed()
+        return !zip(firstHalf, secondHalf).contains(where: { $0.lowercased() != $1.lowercased() })
+    }
 }
 

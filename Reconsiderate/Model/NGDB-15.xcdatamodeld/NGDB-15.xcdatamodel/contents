@@ -14,6 +14,7 @@
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" spotlightIndexingEnabled="YES" syncable="YES"/>
         <attribute name="icon" optional="YES" attributeType="String" spotlightIndexingEnabled="YES" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isPersonal" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" spotlightIndexingEnabled="YES" syncable="YES"/>
@@ -35,12 +36,12 @@
         <attribute name="medium" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="topics" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="sparq" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sparq" inverseName="trait" inverseEntity="Sparq" syncable="YES"/>
-        <relationship name="topic" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Topic" inverseName="trait" inverseEntity="Topic" syncable="YES"/>
+        <relationship name="topic" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Topic" inverseName="trait" inverseEntity="Topic" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Sparq" positionX="-36" positionY="72" width="128" height="165"/>
-        <element name="Thought" positionX="-54" positionY="36" width="128" height="150"/>
-        <element name="Topic" positionX="-45" positionY="99" width="128" height="105"/>
-        <element name="Trait" positionX="-63" positionY="-18" width="128" height="195"/>
+        <element name="Sparq" positionX="28.56640625" positionY="8.29296875" width="128" height="165"/>
+        <element name="Thought" positionX="30.953125" positionY="-235.0859375" width="128" height="165"/>
+        <element name="Topic" positionX="446.03515625" positionY="43.63671875" width="128" height="105"/>
+        <element name="Trait" positionX="244.76953125" positionY="5.78515625" width="128" height="195"/>
     </elements>
 </model>
