@@ -94,8 +94,8 @@ extension Trait {
         
     }
     func addFeelings(_ input: [Feeling]) {
-        for i in input {
-            addFeeling(i)
+        for f in input {
+            addFeeling(f)
         }
         
     }

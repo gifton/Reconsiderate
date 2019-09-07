@@ -12,14 +12,18 @@ public class Thought: NSManagedObject {
     @NSManaged public var id: String
     @NSManaged public var latitude: NSNumber?
     @NSManaged public var longitude: NSNumber?
+    @NSManaged public var isPersonal: Bool
     
     @NSManaged public var sparqs: NSSet?
     
     var computedSparqs: [Sparq] {
-        guard let iSparqs = sparqs else { return [Sparq]()}
+        
         var computedSparqs = [Sparq]()
+        
+        guard let iSparqs = sparqs else { return computedSparqs}
+        
         for sparq in iSparqs {
-            guard let s: Sparq = sparq as? Sparq else { return [Sparq]() }
+            guard let s: Sparq = sparq as? Sparq else { continue }
             computedSparqs.append(s)
         }
         
@@ -36,16 +40,17 @@ extension Thought {
     }
     
     //build thought components
-    static func insert(in context: NSManagedObjectContext, title: String, icon: String, location: CLLocation?) -> Thought {
+    static func insert(in context: NSManagedObjectContext, title: String, icon: String, location: CLLocation?, isPersonal: Bool = false) -> Thought {
         
         //set new thought from context
         let thought: Thought = context.insertObject()
         
         // set variables
-        thought.date  = Date()
-        thought.icon  = icon
-        thought.title = title
-        thought.id    = UserDefaults.thoughtID
+        thought.isPersonal = isPersonal
+        thought.title      = title
+        thought.date       = Date()
+        thought.icon       = icon
+        thought.id         = UserDefaults.thoughtID
         
         //save location if available
         if let loc: CLLocation = location {

@@ -50,7 +50,10 @@ extension Sparq {
     //    - audio
     //    - detail
     private func addAudioComponent(_ component: Audio?) {
-        guard let a = component else { return }
+        guard let a = component else {
+            print("unable to guard into audio object")
+            return
+        }
         detail = a.detail
         rawRecording = a.recording
     }
@@ -59,7 +62,10 @@ extension Sparq {
     //    - url
     //    - detail
     private func addLinkComponent(_ component: Link?) {
-        guard let l = component else { return }
+        guard let l = component else {
+            print("unable to guard into link object")
+            return
+        }
         link = String(describing: l.url)
         detail = l.detail
     }
@@ -68,7 +74,10 @@ extension Sparq {
     //    - title
     //    - detail
     private func addNoteComponent(_ component: Note?) {
-        guard let n = component else { return }
+        guard let n = component else {
+            print("unable to guard into note object")
+            return
+        }
         title = n.title
         detail = n.detail
         
@@ -78,7 +87,10 @@ extension Sparq {
     //    - raw photo
     //    - caption
     private func addPhotoComponent(_ component: Photo?) {
-        guard let p = component else { return }
+        guard let p = component else {
+            print("unable to guard into photo object")
+            return
+        }
         detail = p.caption
         rawPhoto = p.photo.pngData()
     }
