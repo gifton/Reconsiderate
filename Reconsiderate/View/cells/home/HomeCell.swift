@@ -71,13 +71,13 @@ class HomeCell: UICollectionViewCell {
         toRecent.titleEdgeInsets = UIEdgeInsets(top: 0, left: -30, bottom: 0, right: 0)
         toRecent.width += 7
         toRecent.centerX = Device.width / 2
-        toRecent.frame.origin.y = Device.height - 190
+        toRecent.frame.origin.y = Device.height - Device.height * 0.19
         // thought
         toThought.setTitleColor(Device.colors.secondaryGray, for: .normal)
         toThought.sizeToFit()
         toThought.width += 7
         toThought.centerX = Device.width / 2
-        toThought.frame.origin.y = Device.height - 225
+        toThought.frame.origin.y = Device.height - Device.height * 0.22
         toThought.titleEdgeInsets = UIEdgeInsets(top: 0, left: 7, bottom: 0, right: 0)
         
         // add to view

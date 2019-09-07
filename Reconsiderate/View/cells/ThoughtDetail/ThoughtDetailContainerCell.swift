@@ -35,7 +35,7 @@ class ThoughtDetailContainerCell: UITableViewCell {
         cv.dataSource = self
         
         cv.register(cellWithClass: ThoughtDetailMainCell.self)
-//        cv.register(cellWithClass: HomeCell.self)
+        cv.register(cellWithClass: NewSparqCell.self)
         
         addSubview(cv)
         
@@ -52,14 +52,13 @@ extension ThoughtDetailContainerCell: UICollectionViewDataSource {
         var cell: UICollectionViewCell!
         
         if indexPath.row == 0 {
-            let cCell = collectionView.dequeueReusableCell(withClass: NewThoughtCell.self, for: indexPath)
+            let cCell = collectionView.dequeueReusableCell(withClass: ThoughtDetailMainCell.self, for: indexPath)
             
             cell = cCell
         } else {
             // set cell's paramaters, and gestures
-            let cCell = collectionView.dequeueReusableCell(withClass: HomeCell.self, for: indexPath)
-            cCell.toThought.addTapGestureRecognizer(action: moveToThought)
-            cCell.toRecent.addTapGestureRecognizer { self.router?.moveScrollView(to: .recent) }
+            let cCell = collectionView.dequeueReusableCell(withClass: NewSparqCell.self, for: indexPath)
+            
             cell = cCell
         }
         

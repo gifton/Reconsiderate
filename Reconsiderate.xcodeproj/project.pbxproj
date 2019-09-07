@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		55FC5FB2543F97AF1722EE87 /* Pods_Reconsiderate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9266A398A6F0C39D539612EE /* Pods_Reconsiderate.framework */; };
+		D70777F32322A1DB00BFE798 /* NewSparqCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70777F22322A1DB00BFE798 /* NewSparqCell.swift */; };
+		D70777F52322A24300BFE798 /* ThoughtDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70777F42322A24300BFE798 /* ThoughtDetailController.swift */; };
+		D70777F72323A1A200BFE798 /* NewSparqButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70777F62323A1A200BFE798 /* NewSparqButton.swift */; };
 		D709905023002A9D0067FBC0 /* TraitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D709904F23002A9D0067FBC0 /* TraitsViewModel.swift */; };
 		D709905223002E280067FBC0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D709905123002E280067FBC0 /* HomeViewModel.swift */; };
 		D70990552300334E0067FBC0 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70990542300334E0067FBC0 /* AppCoordinator.swift */; };
@@ -77,6 +80,9 @@
 		2C7D7181EAAF9F2AF15969EB /* Pods-Reconsiderate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reconsiderate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reconsiderate/Pods-Reconsiderate.debug.xcconfig"; sourceTree = "<group>"; };
 		757004AD15CFCF2A80A77FAA /* Pods-Reconsiderate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reconsiderate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reconsiderate/Pods-Reconsiderate.release.xcconfig"; sourceTree = "<group>"; };
 		9266A398A6F0C39D539612EE /* Pods_Reconsiderate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reconsiderate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D70777F22322A1DB00BFE798 /* NewSparqCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSparqCell.swift; sourceTree = "<group>"; };
+		D70777F42322A24300BFE798 /* ThoughtDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtDetailController.swift; sourceTree = "<group>"; };
+		D70777F62323A1A200BFE798 /* NewSparqButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSparqButton.swift; sourceTree = "<group>"; };
 		D709904F23002A9D0067FBC0 /* TraitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitsViewModel.swift; sourceTree = "<group>"; };
 		D709905123002E280067FBC0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D70990542300334E0067FBC0 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -192,6 +198,7 @@
 				D709908B230BE4C10067FBC0 /* MicroThoughtView.swift */,
 				D776D447230F208000836B6C /* SparqCollection.swift */,
 				D776D44E230FBFE300836B6C /* SparqFlowLayout.swift */,
+				D70777F62323A1A200BFE798 /* NewSparqButton.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -246,6 +253,7 @@
 			children = (
 				D78CF91A2322391E0024A0F9 /* ThoughtDetailContainerCell.swift */,
 				D78CF91C23229F0D0024A0F9 /* ThoughtDetailMainCell.swift */,
+				D70777F22322A1DB00BFE798 /* NewSparqCell.swift */,
 			);
 			path = ThoughtDetail;
 			sourceTree = "<group>";
@@ -256,6 +264,7 @@
 				D7D3ECC622F269A900831C85 /* ViewController.swift */,
 				D7099079230AEB2D0067FBC0 /* cells */,
 				D7B8D6B322F295FA00B1552E /* home */,
+				D70777F42322A24300BFE798 /* ThoughtDetailController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -526,6 +535,7 @@
 				D75F1C632319A79900F69AC2 /* TraitCreator.swift in Sources */,
 				D7099081230AEFBB0067FBC0 /* UICollectionView.swift in Sources */,
 				D776D448230F208000836B6C /* SparqCollection.swift in Sources */,
+				D70777F32322A1DB00BFE798 /* NewSparqCell.swift in Sources */,
 				D749130322F32177000FE52F /* Link.swift in Sources */,
 				D75F1C652319A84500F69AC2 /* TraitEngineDelegate.swift in Sources */,
 				D776D4562310337000836B6C /* Replicator.swift in Sources */,
@@ -540,6 +550,7 @@
 				D7B8D6AE22F2928B00B1552E /* HomeView.swift in Sources */,
 				D7B8D6D422F2BC4C00B1552E /* ManagedObjectContext.swift in Sources */,
 				D75F1C61231822C600F69AC2 /* TraitEngine.swift in Sources */,
+				D70777F72323A1A200BFE798 /* NewSparqButton.swift in Sources */,
 				D776D45A23125DF600836B6C /* HomeCoordinator.swift in Sources */,
 				D7B8D6C022F2ABC200B1552E /* UIColor.swift in Sources */,
 				D7099086230B15820067FBC0 /* UILabel.swift in Sources */,
@@ -557,6 +568,7 @@
 				D709905023002A9D0067FBC0 /* TraitsViewModel.swift in Sources */,
 				D7B8D6D722F2BC9B00B1552E /* Thought.swift in Sources */,
 				D7B8D6D922F2BCA300B1552E /* Sparq.swift in Sources */,
+				D70777F52322A24300BFE798 /* ThoughtDetailController.swift in Sources */,
 				D7B8D6BB22F2A8D600B1552E /* Device.swift in Sources */,
 				D7B8D6C222F2AC1D00B1552E /* Defaults.swift in Sources */,
 				D709907B230AEBF00067FBC0 /* HomeContainerCell.swift in Sources */,
