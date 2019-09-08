@@ -100,12 +100,16 @@ extension ViewController: HomeControllerDelegate {
         // make thought
         print("making a thought with title: \(title)")
     }
+    func showThought(_ thought: Thought) {
+        coordinator?.goToThought(thought)
+    }
 }
 
 
 protocol HomeControllerDelegate {
     func moveScrollView(to view: HomeCells)
     func createThought(forTitle title: String)
+    func showThought(_ thought: Thought)
 }
 
 enum HomeCells {

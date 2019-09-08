@@ -8,7 +8,7 @@
         <attribute name="recordingPath" optional="YES" attributeType="URI" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" spotlightIndexingEnabled="YES" syncable="YES"/>
         <relationship name="thought" maxCount="1" deletionRule="Nullify" destinationEntity="Thought" inverseName="sparqs" inverseEntity="Thought" syncable="YES"/>
-        <relationship name="trait" maxCount="1" deletionRule="Cascade" destinationEntity="Trait" inverseName="sparq" inverseEntity="Trait" syncable="YES"/>
+        <relationship name="trait" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Trait" inverseName="sparq" inverseEntity="Trait" syncable="YES"/>
     </entity>
     <entity name="Thought" representedClassName="Thought" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" spotlightIndexingEnabled="YES" syncable="YES"/>
@@ -39,9 +39,9 @@
         <relationship name="topic" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Topic" inverseName="trait" inverseEntity="Topic" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Sparq" positionX="28.56640625" positionY="8.29296875" width="128" height="165"/>
+        <element name="Sparq" positionX="28.56640625" positionY="8.29296875" width="128" height="163"/>
         <element name="Thought" positionX="30.953125" positionY="-235.0859375" width="128" height="165"/>
-        <element name="Topic" positionX="446.03515625" positionY="43.63671875" width="128" height="105"/>
-        <element name="Trait" positionX="244.76953125" positionY="5.78515625" width="128" height="195"/>
+        <element name="Topic" positionX="446.03515625" positionY="43.63671875" width="128" height="103"/>
+        <element name="Trait" positionX="244.76953125" positionY="5.78515625" width="128" height="193"/>
     </elements>
 </model>

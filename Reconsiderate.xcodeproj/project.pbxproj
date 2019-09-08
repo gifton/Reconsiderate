@@ -50,7 +50,7 @@
 		D776D4562310337000836B6C /* Replicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776D4552310337000836B6C /* Replicator.swift */; };
 		D776D4582310448800836B6C /* RecentCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776D4572310448800836B6C /* RecentCellViewModel.swift */; };
 		D776D45A23125DF600836B6C /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776D45923125DF600836B6C /* HomeCoordinator.swift */; };
-		D776D45D2314B9D500836B6C /* NGDB-15.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D776D45B2314B9D500836B6C /* NGDB-15.xcdatamodeld */; };
+		D776D45D2314B9D500836B6C /* rcnsdr-pDB3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D776D45B2314B9D500836B6C /* rcnsdr-pDB3.xcdatamodeld */; };
 		D776D45F231714C000836B6C /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776D45E231714C000836B6C /* DateFormatter.swift */; };
 		D776D461231725EB00836B6C /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776D460231725EB00836B6C /* Double.swift */; };
 		D78CF91B2322391E0024A0F9 /* ThoughtDetailHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78CF91A2322391E0024A0F9 /* ThoughtDetailHome.swift */; };
@@ -321,7 +321,7 @@
 				D749130B22F33C9D000FE52F /* Medium.swift */,
 				D749130D22F347BA000FE52F /* Topic.swift */,
 				D749130F22F347D5000FE52F /* Feeling.swift */,
-				D776D45B2314B9D500836B6C /* NGDB-15.xcdatamodeld */,
+				D776D45B2314B9D500836B6C /* rcnsdr-pDB3.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -597,7 +597,7 @@
 				D75F1C77231D99B500F69AC2 /* TopicIdentifier.swift in Sources */,
 				D7B8D6C422F2B30900B1552E /* UIStackView.swift in Sources */,
 				D776D461231725EB00836B6C /* Double.swift in Sources */,
-				D776D45D2314B9D500836B6C /* NGDB-15.xcdatamodeld in Sources */,
+				D776D45D2314B9D500836B6C /* rcnsdr-pDB3.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -795,13 +795,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D776D45B2314B9D500836B6C /* NGDB-15.xcdatamodeld */ = {
+		D776D45B2314B9D500836B6C /* rcnsdr-pDB3.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				D776D45C2314B9D500836B6C /* NGDB-15.xcdatamodel */,
 			);
 			currentVersion = D776D45C2314B9D500836B6C /* NGDB-15.xcdatamodel */;
-			path = "NGDB-15.xcdatamodeld";
+			path = "rcnsdr-pDB3.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

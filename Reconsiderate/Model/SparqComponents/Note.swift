@@ -40,11 +40,11 @@ extension Note: SparqComponent {
         }
         
         let df = DateFormatter()
-        timeSince = df.timeSince(from: sparq.trait.createdAt)
+        timeSince = df.timeSince(from: sparq.trait!.createdAt)
         
         self.title = title
         detail = sparq.detail
         thoughtIcon = sparq.thought.icon
-//        location = sparq.trait.
+        location = sparq.trait!.location
     }
 }

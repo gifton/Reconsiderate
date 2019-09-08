@@ -40,32 +40,34 @@ extension ReplicatorService {
         let ns2 = Sparq.insert(into: context, with: n2, for: t)
         let ns3 = Sparq.insert(into: context, with: n3, for: t)
         let ns4 = Sparq.insert(into: context, with: l1, for: t)
-        
+
         let tr1 = Trait.insert(into: context, with: [.admiration, .sadness, .anxiety], for: ns1)
         let tr2 = Trait.insert(into: context, with: [.satisfaction, .sadness, .sympathy], for: ns2)
         let tr3 = Trait.insert(into: context, with: [.boredom, .awkwardness, .envy], for: ns3)
         let tr4 = Trait.insert(into: context, with: [.romance, .triumph, .boredom], for: ns4)
-        
+
         let top1 = Topic.insert(into: context, title: "New", for: tr1)
         let top2 = Topic.insert(into: context, title: "Bord", for: tr2)
         let top3 = Topic.insert(into: context, title: "Facts", for: tr3)
         let top4 = Topic.insert(into: context, title: "Inspiration", for: tr4)
-        
+
         top1.addToTrait(tr2)
         top1.addToTrait(tr3)
         top1.addToTrait(tr4)
-        
+
         top2.addToTrait(tr1)
         top2.addToTrait(tr3)
         top2.addToTrait(tr4)
-        
+
         top3.addToTrait(tr1)
         top3.addToTrait(tr2)
         top3.addToTrait(tr4)
-        
+
         top4.addToTrait(tr1)
         top4.addToTrait(tr2)
         top4.addToTrait(tr3)
+        
+        save()
     }
     
     private func save() {

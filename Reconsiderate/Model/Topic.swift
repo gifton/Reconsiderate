@@ -39,27 +39,34 @@ public class Topic: NSManagedObject {
         topic.title = title
         topic.createdAt = Date()
         topic.lastUpdate = Date()
+        
         topic.addToTrait(trait)
         
         return topic
     }
     
+    @objc(addTraitObject:)
+    @NSManaged public func addToTrait(_ value: Trait)
+    
+    @objc(removeTraitObject:)
+    @NSManaged public func removeFromTrait(_ value: Trait)
+    
     // adding topic to trait
-    func addToTrait(_ trait: Trait) {
-        // get list of traits
-        let traits = Topic.mutableSetValue(forKey: #keyPath(Topic.traits))
-        
-        // determin if desired trait is already in set
-        let out = traits.filter { (t) -> Bool in
-            let tt = t as? Trait
-            return tt?.id == trait.id
-        }
-        
-        // if it doesnt exist, add to set
-        if out.count == 0 {
-            traits.add(trait)
-        }
-    }
+//    func addTraitToSet(_ trait: Trait) {
+//        // get list of traits
+//        let traits = Topic.mutableSetValue(forKey: #keyPath(Topic.traits))
+//
+//        // determin if desired trait is already in set
+//        let out = traits.filter { (t) -> Bool in
+//            let tt = t as? Trait
+//            return tt?.id == trait.id
+//        }
+//
+//        // if it doesnt exist, add to set
+//        if out.count == 0 {
+//            traits.add(trait)
+//        }
+//    }
     
     // every time a new trait object is created that references this topic
     // call updated() to note the most current occurance of specific topic

@@ -10,6 +10,7 @@ class AppCoordinator: Coordinator {
         navigationController.isNavigationBarHidden = true
     }
     
+    
     func start() {
         let hCoordinator = HomeCoordinator(withNav: navigationController)
         childCoordinators.append(hCoordinator)

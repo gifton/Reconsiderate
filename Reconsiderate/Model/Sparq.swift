@@ -17,7 +17,7 @@ public class Sparq: NSManagedObject {
     @NSManaged public var rawPhoto: Data?
 
     // MARK: entity relationships
-    @NSManaged public var trait: Trait
+    @NSManaged public var trait: Trait?
     @NSManaged public var thought: Thought
     
 }
@@ -25,7 +25,7 @@ public class Sparq: NSManagedObject {
 // MARK: computed properties
 extension Sparq {
     public var createdAt: Date {
-        return trait.createdAt
+        return trait!.createdAt
     }
 }
 
@@ -67,6 +67,7 @@ extension Sparq {
         }
         detail = a.detail
         rawRecording = a.recording
+        print("added audio component")
     }
     
     // add link
@@ -79,6 +80,7 @@ extension Sparq {
         }
         link = String(describing: l.url)
         detail = l.detail
+        print("added link component")
     }
     
     // add note
@@ -91,7 +93,7 @@ extension Sparq {
         }
         title = n.title
         detail = n.detail
-        
+        print("added note component")
     }
     
     // add photo
@@ -104,6 +106,7 @@ extension Sparq {
         }
         detail = p.caption
         rawPhoto = p.photo.pngData()
+        print("added photo component")
     }
 }
 
