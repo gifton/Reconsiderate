@@ -1,6 +1,7 @@
 
 import UIKit
 class ThoughtDetailController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -9,7 +10,9 @@ class ThoughtDetailController: UIViewController {
         view.addSubview(tv)
     }
     
-    let tv: UITableView = {
+    public var thought: Thought?
+    
+    private let tv: UITableView = {
         let tv = UITableView()
         tv.decelerationRate = UIScrollView.DecelerationRate.fast
         tv.allowsSelection = false
@@ -31,7 +34,10 @@ extension ThoughtDetailController: UITableViewDelegate {
 extension ThoughtDetailController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withClass: ThoughtDetailHome.self, for: indexPath)
-//        cell.set(ThoughtDetailHomeViewModel(<#T##thought: Thought##Thought#>))
+        
+        if let thought = thought {
+            cell.set(ThoughtDetailHomeViewModel(thought))
+        }
         
         return cell
     }

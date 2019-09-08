@@ -11,8 +11,9 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = UIViewController()
-        navigationController.pushViewController(vc, animated: false)
+        let hCoordinator = HomeCoordinator(withNav: navigationController)
+        childCoordinators.append(hCoordinator)
+        hCoordinator.start()
     }
     
     // TODO: welcome screen

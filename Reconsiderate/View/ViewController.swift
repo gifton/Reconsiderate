@@ -18,6 +18,10 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
     }
     
+    // MARK: public vars
+    public var coordinator: HomeCoordinator?
+    
+    // MARK: public vars
     let tv: UITableView = {
         let tv = UITableView()
         tv.decelerationRate = UIScrollView.DecelerationRate.fast
@@ -29,6 +33,7 @@ class ViewController: UIViewController {
     }()
     
     let generator = UINotificationFeedbackGenerator()
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
