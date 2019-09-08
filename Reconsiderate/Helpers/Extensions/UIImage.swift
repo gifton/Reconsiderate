@@ -64,15 +64,4 @@ extension UIImage {
         draw(in: drawRect, blendMode: blendMode, alpha: 1.0)
         return UIGraphicsGetImageFromCurrentImageContext()!
     }
-    
-    /// Detaches gesture recognizers from the receiving view.
-    ///
-    /// This method releases gestureRecognizers in addition to detaching them from the view.
-    ///
-    /// - Parameter gestureRecognizers: The array of gesture recognizers to be removed from the view.
-    func removeGestureRecognizers(_ gestureRecognizers: [UIGestureRecognizer]) {
-        for recognizer in gestureRecognizers {
-            removeGestureRecognizer(recognizer)
-        }
-    }
 }

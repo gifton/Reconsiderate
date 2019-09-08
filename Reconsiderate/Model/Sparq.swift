@@ -20,6 +20,17 @@ public class Sparq: NSManagedObject {
     @NSManaged public var trait: Trait
     @NSManaged public var thought: Thought
     
+}
+
+// MARK: computed properties
+extension Sparq {
+    public var createdAt: Date {
+        return trait.createdAt
+    }
+}
+
+// MARK: static initializer
+extension Sparq {
     
     static func insert(into moc: NSManagedObjectContext, with component: SparqComponent, for thought: Thought) -> Sparq {
         

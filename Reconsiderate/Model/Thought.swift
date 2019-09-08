@@ -39,6 +39,21 @@ extension Thought {
         return CLLocation(latitude: lat.doubleValue, longitude: lon.doubleValue)
     }
     
+    // sparq count from last week
+    public var sparqCountFromPastWeek: Int {
+        let lastWeekDate = Calendar.current.date(byAdding: .weekOfYear, value: -1, to: Date())!
+        var count = 0
+        computedSparqs.forEach {
+            if $0.createdAt >= lastWeekDate { count += 1 }
+        }
+        
+        return count
+    }
+}
+
+// MARK: static initializer
+extension Thought {
+    
     //build thought components
     static func insert(in context: NSManagedObjectContext, title: String, icon: String, location: CLLocation?, isPersonal: Bool = false) -> Thought {
         
@@ -65,6 +80,7 @@ extension Thought {
     }
 }
 
+// MARK: Thoguht conformance to managed
 extension Thought: Managed {
     static var defaultSortDescriptors: [NSSortDescriptor] {
         return [NSSortDescriptor(key: #keyPath(date), ascending: false)]
