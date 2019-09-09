@@ -16,7 +16,7 @@ class HomeViewModel: NSObject {
     }
     
     var context: NSManagedObjectContext
-    var thoughts: [Thought] = []
+    var thoughts: [Thought] = [] 
     var sparqs: [Sparq] = []
 }
 

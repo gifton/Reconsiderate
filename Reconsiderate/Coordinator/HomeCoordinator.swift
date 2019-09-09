@@ -8,7 +8,7 @@ class HomeCoordinator: Coordinator {
     }
     
     var childCoordinators: [Coordinator] = []
-    var homeViewModel: HomeViewModel?
+    var homeViewModel: HomeViewModel? 
     var navigationController: UINavigationController
     
     func start() {

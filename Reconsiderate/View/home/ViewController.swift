@@ -20,7 +20,9 @@ class ViewController: UIViewController {
     
     // MARK: public vars
     public var coordinator: HomeCoordinator?
-    public var viewModel: HomeViewModel?
+    public var viewModel: HomeViewModel!  {
+        didSet { print("vm set")}
+    }
     
     // MARK: public vars
     let tv: UITableView = {
@@ -36,8 +38,16 @@ class ViewController: UIViewController {
     let generator = UINotificationFeedbackGenerator()
     
     private func goToThought() {
+        print("attempting to go to thought in ViewController")
+        
+        if let vm = viewModel {
+            print("vm confirmed")
+        } else { print("vm not there")}
         if let t = viewModel?.thoughts.first {
+            print("going to vc")
             coordinator?.goToThought(t)
+        } else {
+            print("unable to find thought to go to vc")
         }
         
     }

@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window = UIWindow(frame: UIScreen.main.bounds)
             self.window?.makeKeyAndVisible()
             
+            self.coordinator?.context = container.viewContext
+            
             self.coordinator?.start()
             
             self.window?.rootViewController = nav

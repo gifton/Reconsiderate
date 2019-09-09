@@ -11,7 +11,7 @@ class AppCoordinator: Coordinator {
         navigationController.isNavigationBarHidden = true
     }
     
-    public var context: NSManagedObjectContext?
+    public var context: NSManagedObjectContext? 
     
     func start() {
         
