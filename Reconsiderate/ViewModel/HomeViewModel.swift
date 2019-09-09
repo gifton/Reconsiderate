@@ -12,7 +12,7 @@ class HomeViewModel: NSObject {
     init(withContext context: NSManagedObjectContext) {
         self.context = context
         super.init()
-
+        thoughts = Thought.fetch(in: context)
     }
     
     var context: NSManagedObjectContext

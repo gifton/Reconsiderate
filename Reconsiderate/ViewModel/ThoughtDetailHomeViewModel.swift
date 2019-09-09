@@ -9,7 +9,7 @@ class ThoughtDetailHomeViewModel {
     
     
     // MARK: Private vars
-    private var thought: Thought
+    public var thought: Thought
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .full
@@ -41,7 +41,9 @@ class ThoughtDetailHomeViewModel {
     public var sparqsThisWeek: String {
         return "\(thought.sparqCountFromPastWeek) sparqs this week"
     }
-    
+    public var sparqs: [Sparq] {
+        return thought.computedSparqs
+    }
     public var location: String {
         guard let loc = thought.location else { return "" }
         return "captured in \(loc)"

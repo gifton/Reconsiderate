@@ -16,7 +16,9 @@ class ThoughtDetailCoordinator: Coordinator {
     func start() {
         guard let thought = thought else { return }
         let vc = ThoughtDetailController()
-        vc.thought = thought
+        
+        vc.viewModel = ThoughtDetailHomeViewModel(thought)
+        
         navigationController.pushViewController(vc, animated: false)
     }
     

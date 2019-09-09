@@ -1,5 +1,6 @@
 
 import UIKit
+import CoreData
 
 class AppCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
@@ -10,9 +11,16 @@ class AppCoordinator: Coordinator {
         navigationController.isNavigationBarHidden = true
     }
     
+    public var context: NSManagedObjectContext?
     
     func start() {
+        
         let hCoordinator = HomeCoordinator(withNav: navigationController)
+        
+        if let context = context {
+            hCoordinator.homeViewModel = HomeViewModel(withContext: context)
+        }
+        
         childCoordinators.append(hCoordinator)
         hCoordinator.start()
     }

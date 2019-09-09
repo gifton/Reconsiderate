@@ -10,7 +10,7 @@ class ThoughtDetailController: UIViewController {
         view.addSubview(tv)
     }
     
-    public var thought: Thought?
+    public var viewModel: ThoughtDetailHomeViewModel?
     
     private let tv: UITableView = {
         let tv = UITableView()
@@ -35,13 +35,16 @@ extension ThoughtDetailController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withClass: ThoughtDetailHome.self, for: indexPath)
         
-        if let thought = thought {
+        if let thought = viewModel?.thought {
             cell.set(ThoughtDetailHomeViewModel(thought))
         }
         
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let count = viewModel?.sparqs.count {
+            return count + 1
+        }
         return 1
     }
 }

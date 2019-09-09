@@ -13,6 +13,11 @@ class HomeContainerCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    public var goToThought: (() -> ())? {
+        didSet {
+            print("set action in container cell")
+        }
+    }
     
     public var router: HomeControllerDelegate?
     public var cv: UICollectionView!
@@ -53,11 +58,13 @@ extension HomeContainerCell: UICollectionViewDataSource {
         if indexPath.row == 0 {
             let cCell = collectionView.dequeueReusableCell(withClass: NewThoughtCell.self, for: indexPath)
             cCell.delegate = self
+            cCell.toThoughtButton.addTapGestureRecognizer(action: goToThought)
+            print("added tap gesture to thought button")
             cell = cCell
         } else {
             // set cell's paramaters, and gestures
             let cCell = collectionView.dequeueReusableCell(withClass: HomeCell.self, for: indexPath)
-            cCell.toThought.addTapGestureRecognizer(action: moveToThought)
+            cCell.toThought.addTapGestureRecognizer(action: moveToThoughtCreator)
             cCell.toRecent.addTapGestureRecognizer { self.router?.moveScrollView(to: .recent) }
             cell = cCell
         }
@@ -66,7 +73,7 @@ extension HomeContainerCell: UICollectionViewDataSource {
     }
     
     // move collection view to new thought
-    private func moveToThought() {
+    private func moveToThoughtCreator() {
         cv.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
     }
     

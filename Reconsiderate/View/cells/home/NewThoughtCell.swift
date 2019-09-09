@@ -15,6 +15,7 @@ class NewThoughtCell: UICollectionViewCell {
     
     // MARK delegate
     public var delegate: ThoughtCreator?
+    public let toThoughtButton = UIButton()
     // MARK: ui components
     private let thoughtCard = UIView()
     private let logo = UIImageView(image: #imageLiteral(resourceName: "logo"))
@@ -23,7 +24,6 @@ class NewThoughtCell: UICollectionViewCell {
     private let thoughtTextView = UITextView()
     private let thoughtImage = UIImageView(image: #imageLiteral(resourceName: "cloud"))
     private let saveButton = UIButton()
-    private let toThoughtButton = UIButton()
     private let savedImage = UIImageView(image: #imageLiteral(resourceName: "checkMark"))
     
 }
@@ -66,6 +66,7 @@ extension NewThoughtCell {
     private func style() {
         toThoughtButton.setTitleColor(Device.colors.primaryBlue, for: .normal)
         toThoughtButton.setTitle("Go to Thought", for: .normal)
+        toThoughtButton.addTapGestureRecognizer(action: goToThought)
         
         saveButton.backgroundColor = Device.colors.primaryBlue
         saveButton.setTitle("Save Thought", for: .normal)
@@ -118,12 +119,18 @@ extension NewThoughtCell {
         UIView.animate(withDuration: 0.25, animations: {
             self.thoughtCard.subviews.forEach { $0.alpha = 0.0 }
         })
+        
+        // add subviews
         thoughtCard.addSubview(toThoughtButton)
         thoughtCard.addSubview(savedImage)
         
         UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 4, initialSpringVelocity: 35, options: .curveEaseOut, animations: {
             self.savedImage.frame.size = CGSize(width: 80, height: 80)
         }, completion: nil)        
+    }
+    
+    private func goToThought() {
+        print("tapped go to thought")
     }
 }
 

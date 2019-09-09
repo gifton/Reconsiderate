@@ -8,12 +8,13 @@ class HomeCoordinator: Coordinator {
     }
     
     var childCoordinators: [Coordinator] = []
-    
+    var homeViewModel: HomeViewModel?
     var navigationController: UINavigationController
     
     func start() {
         let vc = ViewController()
         vc.coordinator = self
+        vc.viewModel = homeViewModel
         navigationController.pushViewController(ViewController(), animated: false)
     }
     

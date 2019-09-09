@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     
     // MARK: public vars
     public var coordinator: HomeCoordinator?
+    public var viewModel: HomeViewModel?
     
     // MARK: public vars
     let tv: UITableView = {
@@ -34,6 +35,13 @@ class ViewController: UIViewController {
     
     let generator = UINotificationFeedbackGenerator()
     
+    private func goToThought() {
+        if let t = viewModel?.thoughts.first {
+            coordinator?.goToThought(t)
+        }
+        
+    }
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -42,11 +50,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // if its row 0, return welcome cell
+        
+        // if its row 0, return home container cell
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withClass: HomeContainerCell.self, for: indexPath)
             cell.cv.delegate = self
             cell.router = self
+            cell.goToThought = goToThought
+            print( "set go to thought method in viewController" )
             return cell
         }
         
@@ -67,15 +78,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 extension ViewController: UICollectionViewDelegate {
     
     // table view should only scroll on home view
-    // thought view has nothing below it... yet
-//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        if indexPath.row == 0 {
-//            tv.isScrollEnabled = false
-//        } else {
-//            tv.isScrollEnabled = true
-//        }
-//    }
-    
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row == 1 {
             tv.isScrollEnabled = false
@@ -105,16 +107,6 @@ extension ViewController: HomeControllerDelegate {
     }
 }
 
-
-protocol HomeControllerDelegate {
-    func moveScrollView(to view: HomeCells)
-    func createThought(forTitle title: String)
-    func showThought(_ thought: Thought)
-}
-
-enum HomeCells {
-    case newThought, home, recent
-}
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
