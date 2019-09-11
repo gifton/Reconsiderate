@@ -3,16 +3,15 @@ import Foundation
 import CoreData
 import CoreLocation
 
-// HomeView conrolls three aspects:
-// navigation
 // creating a new thought
-// viewing recent thoughts / sparqs
+// fetching recent thoughts / sparqs
 
 class HomeViewModel: NSObject {
     init(withContext context: NSManagedObjectContext) {
         self.context = context
         super.init()
         thoughts = Thought.fetch(in: context)
+        print("thought view model set")
     }
     
     var context: NSManagedObjectContext
@@ -23,6 +22,8 @@ class HomeViewModel: NSObject {
 
 // MARK: fetch methods
 extension HomeViewModel {
+    
+    // thoughts
     private func getRecentThoughts() {
         let req = Thought.sortedFetchRequest
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
@@ -39,7 +40,9 @@ extension HomeViewModel {
     
     // sparqs
     private func getRecentSparqs() {
+        
         let req = Sparq.sortedFetchRequest
+
         req.fetchBatchSize = 5
         req.shouldRefreshRefetchedObjects = true
         req.returnsObjectsAsFaults = false
@@ -52,6 +55,31 @@ extension HomeViewModel {
     
     public func createThought(withTitle title: String, andIcon icon: String) {
         _ = Thought.insert(in: context, title: title, icon: icon, location: CLLocation())
-        do { try context.save() } catch { print(error)}
+        do  { try context.save() } catch { print(error)}
     }
+}
+
+// MARK: vm creation methods
+extension HomeViewModel {
+    
+    func initiateRecentModel() -> RecentCellViewModel {
+
+        let vm = RecentCellViewModel(sparqs, thoughts)
+
+        return vm
+
+    }
+    
+    func initiateContainerCell() -> HomeContainerViewModel {
+        let vm = HomeContainerViewModel(withContext: context)
+
+        return vm
+    }
+    
+}
+
+// MARK: vm content gathering methods
+extension HomeViewModel {
+    
+    
 }

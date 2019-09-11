@@ -27,6 +27,15 @@ extension Sparq {
     public var createdAt: Date {
         return trait!.createdAt
     }
+    
+    var computedComponent: SparqComponent {
+        switch trait!.computedMedium {
+        case .photo: return Photo(self)
+        case .link: return Link(self)
+        case .note: return Note(self)
+        case .audio: return Audio(self)
+        }
+    }
 }
 
 // MARK: static initializer
