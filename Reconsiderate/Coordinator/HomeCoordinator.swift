@@ -12,10 +12,15 @@ class HomeCoordinator: Coordinator {
     var navigationController: UINavigationController
     
     func start() {
+        
         let vc = ViewController()
         vc.coordinator = self
-        vc.viewModel = homeViewModel
-        navigationController.pushViewController(ViewController(), animated: false)
+        
+        if let vm = homeViewModel {
+            vc.viewModel = vm
+        }
+        
+        navigationController.pushViewController(vc, animated: false)
     }
     
     public func goToThought(_ thought: Thought) {

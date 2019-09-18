@@ -19,7 +19,7 @@ class AppCoordinator: Coordinator {
         
         if let context = context {
             hCoordinator.homeViewModel = HomeViewModel(withContext: context)
-        }
+        } else { fatalError("unable to initiate HomeViewModel in AppCoordinator")}
         
         childCoordinators.append(hCoordinator)
         hCoordinator.start()

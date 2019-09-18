@@ -39,13 +39,17 @@ extension Trait {
         guard let feelings = feelings else { return nil }
         var computedFeelings = [Feeling]()
         
-        // split feelings by comma
+        // treat and split feelings as comma seperated values
         let splitString = feelings.split(separator: ",")
         for s in splitString {
+            
             // feeling can be created from raw string, (throws error if not found), continue to next
             guard let f = Feeling(rawValue: String(s)) else { continue }
             computedFeelings.append(f)
+            
         }
+        
+        
         return computedFeelings
     }
     

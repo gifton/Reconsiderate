@@ -4,7 +4,8 @@ import UIKit
 class NewThoughtCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .black
+        backgroundColor = .lightGray
+        
         buildUI()
         style()
     }
@@ -16,6 +17,7 @@ class NewThoughtCell: UICollectionViewCell {
     // MARK delegate
     public var delegate: ThoughtCreator?
     public let toThoughtButton = UIButton()
+    
     // MARK: ui components
     private let thoughtCard = UIView()
     private let logo = UIImageView(image: #imageLiteral(resourceName: "logo"))
@@ -31,6 +33,7 @@ class NewThoughtCell: UICollectionViewCell {
 // MARK: all UIBuilding functions
 
 extension NewThoughtCell {
+    
     private func buildUI() {
         
         // set thought card
@@ -46,9 +49,11 @@ extension NewThoughtCell {
         addSubview(saveButton)
         
         buildThoughtCard()
+        
     }
     
     private func buildThoughtCard() {
+        
         //frames
         logo.frame = CGRect(x: 40, y: 40, width: 60, height: 60)
         cancelButton.frame = CGRect(x: thoughtCard.right - 130, y: 40, width: 90, height: 25)
@@ -62,11 +67,13 @@ extension NewThoughtCell {
         thoughtCard.addSubview(thoughtImage)
         thoughtCard.addSubview(questionLabel)
         thoughtCard.addSubview(thoughtTextView)
+        
     }
+    
     private func style() {
         toThoughtButton.setTitleColor(Device.colors.primaryBlue, for: .normal)
         toThoughtButton.setTitle("Go to Thought", for: .normal)
-        toThoughtButton.addTapGestureRecognizer(action: goToThought)
+        toThoughtButton.addTapGestureRecognizer(action: didTapGoToNewThought)
         
         saveButton.backgroundColor = Device.colors.primaryBlue
         saveButton.setTitle("Save Thought", for: .normal)
@@ -87,9 +94,13 @@ extension NewThoughtCell {
     }
     
     private func didStartThought() {
+        
         saveButton.alpha = 1.0
+        
     }
+    
     private func clear() {
+        
         // reset outside view alphas
         saveButton.alpha = 0.5
         toThoughtButton.alpha = 0
@@ -99,10 +110,10 @@ extension NewThoughtCell {
     
     private func didPressSave() {
         // remove tv focus
-        
         if thoughtTextView.text.count > 1 {
             delegate?.createThought(fromTitle: thoughtTextView.text)
             saved()
+            print("saved")
         }
     }
     
@@ -129,8 +140,10 @@ extension NewThoughtCell {
         }, completion: nil)        
     }
     
-    private func goToThought() {
-        print("tapped go to thought")
+    private func didTapGoToNewThought() {
+        if let d = delegate {
+            d.goToNewThought()
+        } else { print("fawk")}
     }
 }
 

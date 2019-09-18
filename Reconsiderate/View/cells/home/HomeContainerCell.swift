@@ -13,17 +13,11 @@ class HomeContainerCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public var goToThought: (() -> ())? {
-        didSet {
-            print("set action in container cell")
-        }
-    }
-    
     public var router: HomeControllerDelegate?
     public var cv: UICollectionView!
     
     func setCollection() {
-        
+ 
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.itemSize = Device.frame.size
@@ -45,8 +39,11 @@ class HomeContainerCell: UITableViewCell {
         
         cv.scrollToItem(at: IndexPath(item: 1, section: 0), at: .right, animated: true)
     }
+    
+    
 }
 
+// MARK: HomeContainerCell CollectionView datasource conformance
 extension HomeContainerCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 2
@@ -58,8 +55,7 @@ extension HomeContainerCell: UICollectionViewDataSource {
         if indexPath.row == 0 {
             let cCell = collectionView.dequeueReusableCell(withClass: NewThoughtCell.self, for: indexPath)
             cCell.delegate = self
-            cCell.toThoughtButton.addTapGestureRecognizer(action: goToThought)
-            print("added tap gesture to thought button")
+            
             cell = cCell
         } else {
             // set cell's paramaters, and gestures
@@ -79,13 +75,18 @@ extension HomeContainerCell: UICollectionViewDataSource {
     
 }
 
+// MARK: HomeContainerCell thought creator conformance
 extension HomeContainerCell: ThoughtCreator {
     func createThought(fromTitle title: String) {
         router?.createThought(forTitle: title)
     }
+    
+    // TODO: connect goToNewThought() to viewController andcoordinator
+    func goToNewThought() {
+        print("attempting to go to thought")
+        router?.showNewThought()
+    }
+    
+    
 }
 
-
-protocol ThoughtCreator {
-    func createThought(fromTitle title: String)
-}

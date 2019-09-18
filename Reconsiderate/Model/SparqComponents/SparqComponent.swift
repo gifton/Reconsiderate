@@ -19,3 +19,17 @@ protocol SparqComponent {
     
     init(_ sparq: Sparq)
 }
+
+extension Array where Element == Sparq {
+    
+    // returns new array of computed sparq componentss for use in CV's 
+    func components() -> [SparqComponent] {
+        var comps = [SparqComponent]()
+        
+        forEach {
+            comps.append($0.computedComponent)
+        }
+        
+        return comps
+    }
+}

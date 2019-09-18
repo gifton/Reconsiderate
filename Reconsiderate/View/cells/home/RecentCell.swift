@@ -30,7 +30,7 @@ class RecentCell: UITableViewCell {
     
     private func setThoughts() {
         var yPos = CGFloat(250)
-        let count = viewModel?.thoughts.count ?? 4
+        let count = 4
         for _ in 0...count {
             let view = MicroThoughtView()
             view.frame.origin = CGPoint(x: 50, y: yPos)

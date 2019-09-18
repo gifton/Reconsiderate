@@ -20,9 +20,7 @@ class ViewController: UIViewController {
     
     // MARK: public vars
     public var coordinator: HomeCoordinator?
-    public var viewModel: HomeViewModel!  {
-        didSet { print("vm set")}
-    }
+    public var viewModel: HomeViewModel!
     
     // MARK: public vars
     let tv: UITableView = {
@@ -38,11 +36,11 @@ class ViewController: UIViewController {
     let generator = UINotificationFeedbackGenerator()
     
     private func goToThought() {
-        print("attempting to go to thought in ViewController")
         
         if let vm = viewModel {
             print("vm confirmed")
         } else { print("vm not there")}
+        
         if let t = viewModel?.thoughts.first {
             print("going to vc")
             coordinator?.goToThought(t)
@@ -66,7 +64,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withClass: HomeContainerCell.self, for: indexPath)
             cell.cv.delegate = self
             cell.router = self
-            cell.goToThought = goToThought
             print( "set go to thought method in viewController" )
             return cell
         }
@@ -74,7 +71,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         // return recent celll otherwise
         let cell = tableView.dequeueReusableCell(withClass: RecentCell.self, for: indexPath)
         cell.toHome.addTapGestureRecognizer(action: scrollToHome)
-        cell.viewModel = RecentCellViewModel()
+//        cell.viewModel = RecentCellViewModel()
         cell.cvDatasource = self
         return cell
     }
@@ -114,6 +111,9 @@ extension ViewController: HomeControllerDelegate {
     }
     func showThought(_ thought: Thought) {
         coordinator?.goToThought(thought)
+    }
+    func showNewThought() {
+        coordinator?.goToThought(viewModel.thoughts.first!)
     }
 }
 

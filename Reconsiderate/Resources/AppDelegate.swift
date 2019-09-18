@@ -16,18 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var coordinator: AppCoordinator?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let nav = UINavigationController()
-        coordinator = AppCoordinator(navigationController: nav)
         
         createThoughtContainer { (container) in
+            let nav = UINavigationController()
+            self.coordinator = AppCoordinator(navigationController: nav)
             self.window = UIWindow(frame: UIScreen.main.bounds)
             self.window?.makeKeyAndVisible()
-            
+            self.window?.rootViewController = nav
             self.coordinator?.context = container.viewContext
             
             self.coordinator?.start()
             
-            self.window?.rootViewController = nav
+            let t = Thought.fetch(in: container.viewContext)
+            print("-------------------")
+            print(t)
             IQKeyboardManager.shared.enable = true
             
         }

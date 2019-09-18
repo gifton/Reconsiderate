@@ -5,13 +5,15 @@ import CoreLocation
 
 // creating a new thought
 // fetching recent thoughts / sparqs
-
 class HomeViewModel: NSObject {
     init(withContext context: NSManagedObjectContext) {
         self.context = context
         super.init()
         thoughts = Thought.fetch(in: context)
         print("thought view model set")
+        print("-------------------")
+        print("thought found: \(thoughts.first)")
+        getRecentThoughts()
     }
     
     var context: NSManagedObjectContext
@@ -33,6 +35,7 @@ extension HomeViewModel {
         req.sortDescriptors = [sortDescriptor]
         do {
             thoughts = try context.fetch(req)
+            print(thoughts)
         } catch let err {
             print("there was an error fetching: \(err)")
         }
@@ -62,18 +65,12 @@ extension HomeViewModel {
 // MARK: vm creation methods
 extension HomeViewModel {
     
-    func initiateRecentModel() -> RecentCellViewModel {
+    func initiateRecentViewModel() -> RecentCellViewModel {
 
         let vm = RecentCellViewModel(sparqs, thoughts)
 
         return vm
 
-    }
-    
-    func initiateContainerCell() -> HomeContainerViewModel {
-        let vm = HomeContainerViewModel(withContext: context)
-
-        return vm
     }
     
 }

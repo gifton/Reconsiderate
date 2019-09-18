@@ -1,9 +1,19 @@
-//
-//  HorizontalScrollingTableCell.swift
-//  Reconsiderate
-//
-//  Created by Gifton on 9/9/19.
-//  Copyright © 2019 Wesaturate. All rights reserved.
-//
 
 import Foundation
+
+protocol HorizontalScrollingTableCellDelegate: NSObject {
+    func createNewThought(fromTitle title: String)
+    func goToNewThought()
+    func goToMe()
+    func goToThoughts()
+    func goToSparqs()
+    func goToTraits()
+    func goToSettings()
+}
+
+
+protocol RecentContentCellDelegate {
+    func searchFor(_ payload: String)
+    func goToThought(_ thought: Thought)
+    func goToSparq(_ sparq: Sparq)
+}
